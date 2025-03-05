@@ -1,0 +1,17 @@
+{
+    "email": "lala.sananjaya@gmail.com",
+    "phone": {
+        "code": "+94",
+        "number": "712373118"
+    },
+    "name": "John Doe",
+    "country": "CA",
+    "starting_date": "22/03/2025",
+    "ending_date": "29/03/2025",
+    "group_type": "any",
+    "luxury_level": "medium",
+    "activity_level": "medium",
+    "cultural_depth": "medium",
+    "wildlife_focus": "medium",
+    "recaptcha_token": "as232kj34nm,234n2lk3n4"
+}
