@@ -12,6 +12,7 @@ app.get('/posts',
     // secure_prod,
     // auth_credentials,
     (req, res) => {
+        
         return res.send({
             status: true,
             statusText: 'Successful',

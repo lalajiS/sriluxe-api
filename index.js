@@ -3,8 +3,11 @@ var cors = require('cors');
 var https = require('http');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var logger = require('./utils/logger');
+const sqlite3 = require('sqlite3').verbose();
+const logger = require('./utils/logger');
+
 const { log } = require('./utils/logger');
+const db = require('./utils/db');
 
 // Set the CORS Configurations
 var app = express();
@@ -50,16 +53,18 @@ app.use((err, req, res, next) => {
 // Import routers
 var downloadlogs = require('./routes/download_logs');
 var home_page = require('./routes/home_page');
-var blogs = require('./routes/blog');
+var contact = require('./routes/contact');
 var tours = require('./routes/tours');
+var blogs = require('./routes/blog');
 
 
 
 // Set routers
 app.use('/getlogs', downloadlogs);
 app.use('/homepage', home_page);
-app.use('/blog', blogs);
+app.use('/contact', contact);
 app.use('/tours', tours);
+app.use('/blog', blogs);
 
 
 
@@ -74,10 +79,10 @@ app.use((req, res) => {
 })
 
 
+
 // create and run the server
 var server = https.Server(app);
 const port = process.env.PORT || 3003;
-const host = '127.0.0.1';
 server.listen(port, function () {
     logger.log.info(`# SRILUXE Server API is running on Port : ${port}`);
 });

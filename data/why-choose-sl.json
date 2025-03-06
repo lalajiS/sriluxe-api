@@ -1,17 +1,21 @@
 [
     {
+        "id": "1",
         "title": "Diverse Natural Beauty",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwPKoaA84r4PCkkRpdSVXzDUDj9PoruUa294HtuKiw5bZBNkYOTgyfIBrA1lLQiAiKeKo"
     },
     {
+        "id": "2",
         "title": "Rich Cultural Heritage",
         "image": "https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.ft.lk/ftadmin/wp-content/files_mf/1456332744DFT16F03.jpg"
     },
     {
+        "id": "3",
         "title": "Delicious Food",
         "image": "https://www.soulsrilanka.com/image/trip/05/01.jpg"
     },
     {
+        "id": "4",
         "title": "Warm Hospitality",
         "image": "https://explore.vacations/wp-content/uploads/2024/12/3-12.jpg"
     }

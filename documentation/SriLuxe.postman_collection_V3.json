@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "14aa175b-1235-429a-ad14-d4a14af57539",
+		"name": "SriLuxe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "15480173"
+	},
+	"item": [
+		{
+			"name": "content",
+			"item": [
+				{
+					"name": "banner video",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/web/video/banner-video-1.mp4"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "homepage",
+			"item": [
+				{
+					"name": "homepage/why-choose-sl",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/homepage/why-choose-sl"
+					},
+					"response": []
+				},
+				{
+					"name": "homepage/popular-destinations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/homepage/popular-destinations"
+					},
+					"response": []
+				},
+				{
+					"name": "homepage/tour-packages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/homepage/tour-packages"
+					},
+					"response": []
+				},
+				{
+					"name": "homepage/testimonials",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/homepage/testimonials"
+					},
+					"response": []
+				},
+				{
+					"name": "homepage/trending-tours",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/homepage/trending-tours"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "blog/posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/blog/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "custom-tour",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"lala.sananjaya@gmail.com\",\n    \"phone_code\": \"+94\",\n    \"phone_number\": \"712373118\",\n    \"name\": \"John Doe\",\n    \"country\": \"CA\",\n    \"starting_date\": \"22/03/2025\",\n    \"ending_date\": \"29/03/2025\",\n    \"group_type\": \"any\",\n    \"luxury_level\": \"3\",\n    \"activity_level\": \"2\",\n    \"cultural_depth\": \"2\",\n    \"wildlife_focus\": \"1\",\n    \"recaptcha_token\": \"as232kj34nm$234n2lk3n4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/tours/custom-tour"
+			},
+			"response": []
+		},
+		{
+			"name": "contact/form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"lala.sananjaya@gmail.com\",\n    \"phone_number\": \"712373118\",\n    \"name\": \"John Doe\",\n    \"purpose\": \"Business\",\n    \"message\": \"Test 1\",\n    \"recaptcha_token\": \"as232kj34nm$234n2lk3n4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{base_url}}/contact/form"
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-custom-tour-requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/tours/get-all-custom-tour-requests"
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-contact-requests",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{base_url}}/contact/get-all-requests"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3003",
+			"type": "string",
+			"disabled": true
+		},
+		{
+			"key": "base_url",
+			"value": "https://sriluxe-api-bstni.ondigitalocean.app",
+			"type": "string"
+		}
+	]
+}

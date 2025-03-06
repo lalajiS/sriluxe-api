@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary Generator</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .result-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        #map {
+            height: 400px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Travel Itinerary Generator</h1>
+
+        <form id="itinerary-form">
+            <label for="travel-season">Select Travel Season:</label>
+            <select id="travel-season" required>
+                <option value="Yala">Yala</option>
+                <option value="Maha">Maha</option>
+            </select>
+
+            <label for="luxury-level">Luxury Level (1-3):</label>
+            <input type="number" id="luxury-level" min="1" max="3" value="2" required>
+
+            <label for="activity-level">Activity Level (1-3):</label>
+            <input type="number" id="activity-level" min="1" max="3" value="2" required>
+
+            <label for="wildlife-focus">Wildlife Focus (1-3):</label>
+            <input type="number" id="wildlife-focus" min="1" max="3" value="2" required>
+
+            <label for="cultural-depth">Cultural Depth (1-3):</label>
+            <input type="number" id="cultural-depth" min="1" max="3" value="2" required>
+
+            <label for="wellness">Wellness (1-3):</label>
+            <input type="number" id="wellness" min="1" max="3" value="2" required>
+
+            <label for="travel-days">Number of Days:</label>
+            <input type="number" id="travel-days" min="1" value="7" required>
+
+            <button type="button" onclick="generateItinerary()">Generate Itinerary</button>
+        </form>
+
+        <div class="result-container" id="result-container"></div>
+        <div id="map"></div>
+    </div>
+
+    <script>
+        const destinations = [
+            { name: "Amangalla", season: "Both", wildlifeLevel: 1, culturalLevel: 3, wellnessLevel: 3, activityLevel: 1, luxuryLevel: 3, hotel: "Amangalla", latitude: 6.0288, longitude: 80.2170, website: "https://www.aman.com/resorts/amangalla" },
+            { name: "Le Grand Galle", season: "Both", wildlifeLevel: 1, culturalLevel: 2, wellnessLevel: 2, activityLevel: 2, luxuryLevel: 3, hotel: "Le Grand Galle", latitude: 6.0320, longitude: 80.2125, website: "https://www.legrandgalle.lk/" },
+            { name: "The Fort Printers", season: "Both", wildlifeLevel: 1, culturalLevel: 3, wellnessLevel: 1, activityLevel: 1, luxuryLevel: 2, hotel: "The Fort Printers", latitude: 6.0263, longitude: 80.2180, website: "https://www.thefortprinters.com/" },
+            { name: "Galle Fort Hotel", season: "Both", wildlifeLevel: 1, culturalLevel: 3, wellnessLevel: 1, activityLevel: 2, luxuryLevel: 2, hotel: "Galle Fort Hotel", latitude: 6.0269, longitude: 80.2174, website: "https://galleforthotel.com/" },
+            { name: "Wild Coast Tented Lodge", season: "Yala", wildlifeLevel: 3, culturalLevel: 1, wellnessLevel: 2, activityLevel: 3, luxuryLevel: 3, hotel: "Wild Coast Tented Lodge", latitude: 6.2625, longitude: 81.4068, website: "www.resplendentceylon.com/wildcoastlodge-yala" },
+            { name: "Jetwing Yala", season: "Yala", wildlifeLevel: 3, culturalLevel: 1, wellnessLevel: 2, activityLevel: 3, luxuryLevel: 2, hotel: "Jetwing Yala", latitude: 6.2508, longitude: 81.3958, website: "https://www.jetwinghotels.com/jetwingyala/" },
+            { name: "98 Acres Resort & Spa", season: "Yala", wildlifeLevel: 3, culturalLevel: 2, wellnessLevel: 3, activityLevel: 3, luxuryLevel: 3, hotel: "98 Acres Resort & Spa", latitude: 6.8713, longitude: 81.0624, website: "https://www.resort98acres.com/" },
+            { name: "Water Garden", season: "Maha", wildlifeLevel: 2, culturalLevel: 3, wellnessLevel: 2, activityLevel: 2, luxuryLevel: 3, hotel: "Water Garden", latitude: 7.9574, longitude: 80.7550, website: "https://www.watergardensigiriya.com/" },
+            { name: "Jetwing Vil Uyana", season: "Maha", wildlifeLevel: 2, culturalLevel: 3, wellnessLevel: 3, activityLevel: 2, luxuryLevel: 3, hotel: "Jetwing Vil Uyana", latitude: 7.9308, longitude: 80.7207, website: "https://www.jetwinghotels.com/jetwingviluyana/" },
+        ];
+
+        let map;
+
+        function filterDestinationsBySeason(season) {
+            return destinations.filter(dest => dest.season === season || dest.season === "Both");
+        }
+
+        function generateItinerary() {
+            const season = document.getElementById("travel-season").value;
+            const luxuryLevel = parseInt(document.getElementById("luxury-level").value);
+            const activityLevel = parseInt(document.getElementById("activity-level").value);
+            const wildlifeFocus = parseInt(document.getElementById("wildlife-focus").value);
+            const culturalDepth = parseInt(document.getElementById("cultural-depth").value);
+            const wellness = parseInt(document.getElementById("wellness").value);
+            const travelDays = parseInt(document.getElementById("travel-days").value);
+
+            const seasonalDestinations = filterDestinationsBySeason(season);
+
+            const sortedDestinations = seasonalDestinations.sort((a, b) => {
+                const aScore = (a.wildlifeLevel * wildlifeFocus) + (a.culturalLevel * culturalDepth) + (a.wellnessLevel * wellness) + (a.activityLevel * activityLevel) + (a.luxuryLevel * luxuryLevel);
+                const bScore = (b.wildlifeLevel * wildlifeFocus) + (b.culturalLevel * culturalDepth) + (b.wellnessLevel * wellness) + (b.activityLevel * activityLevel) + (b.luxuryLevel * luxuryLevel);
+                return bScore - aScore;
+            });
+
+            const itinerary = [];
+            itinerary.push({
+                day: 1,
+                destination: "Colombo (Airport)",
+                activity: "Arrival",
+                stay: luxuryLevel === 3 ? "Luxury Stay" : "Comfort Stay",
+                hotel: "N/A",
+                latitude: 6.9271,
+                longitude: 79.8612
+            });
+
+            for (let i = 1; i < travelDays; i++) {
+                const destination = sortedDestinations[(i - 1) % sortedDestinations.length];
+                itinerary.push({
+                    day: i + 1,
+                    destination: destination.name,
+                    activity: `Explore ${destination.name}`,
+                    stay: luxuryLevel === 3 ? "Luxury Stay" : "Comfort Stay",
+                    hotel: destination.hotel,
+                    latitude: destination.latitude,
+                    longitude: destination.longitude
+                });
+            }
+
+
+      // Add return to airport
+            itinerary.push({
+                day: travelDays + 1,
+                destination: "Colombo (Airport)",
+                activity: "Departure",
+                stay: "N/A",
+                hotel: "N/A",
+                latitude: 6.9271,
+                longitude: 79.8612
+            });
+
+            displayItinerary(itinerary);
+            plotRouteOnMap(itinerary);
+
+            displayItinerary(itinerary);
+            plotRouteOnMap(itinerary);
+        }
+
+        function displayItinerary(itinerary) {
+            const resultContainer = document.getElementById("result-container");
+            resultContainer.innerHTML = "<h2>Your Itinerary:</h2>";
+
+            const table = document.createElement("table");
+            table.innerHTML = `
+                <tr>
+                    <th>Day</th>
+                    <th>Destination</th>
+                    <th>Activity</th>
+                    <th>Stay</th>
+                    <th>Hotel</th>
+                </tr>
+            `;
+
+            itinerary.forEach(item => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${item.day}</td>
+                    <td>${item.destination}</td>
+                    <td>${item.activity}</td>
+                    <td>${item.stay}</td>
+                    <td>${item.hotel}</td>
+                `;
+                table.appendChild(row);
+            });
+
+            resultContainer.appendChild(table);
+        }
+
+        function plotRouteOnMap(itinerary) {
+            if (!map) {
+                map = L.map('map').setView([6.9271, 79.8612], 7);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 18,
+                    attribution: '© OpenStreetMap contributors'
+                }).addTo(map);
+            } else {
+                map.eachLayer(layer => {
+                    if (!!layer.toGeoJSON) {
+                        map.removeLayer(layer);
+                    }
+                });
+            }
+
+            const routeCoordinates = itinerary.map(item => [item.latitude, item.longitude]);
+
+            L.polyline(routeCoordinates, { color: 'blue' }).addTo(map);
+
+            itinerary.forEach(item => {
+                L.marker([item.latitude, item.longitude]).addTo(map)
+                    .bindPopup(`<b>${item.destination}</b><br>${item.activity}<br>${item.hotel}`).openPopup();
+            });
+        }
+    </script>
+</body>
+</html>
