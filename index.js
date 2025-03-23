@@ -87,5 +87,6 @@ app.use((req, res) => {
 var server = https.Server(app);
 const port = process.env.PORT || 3003;
 server.listen(port, function () {
+    console.log(process.env.TEST_ENV_VAR);
     logger.log.info(`# SRILUXE Server API is running on Port : ${port}`);
 });
