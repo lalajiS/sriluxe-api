@@ -9,6 +9,8 @@ const logger = require('./utils/logger');
 const { log } = require('./utils/logger');
 const db = require('./utils/db');
 
+require("dotenv").config();
+
 // Set the CORS Configurations
 var app = express();
 app.use(cors());
@@ -48,6 +50,7 @@ app.use((err, req, res, next) => {
         next()
     }
 })
+
 
 
 // Import routers

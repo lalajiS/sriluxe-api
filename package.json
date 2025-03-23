@@ -12,8 +12,10 @@
   "dependencies": {
     "app-root-path": "^3.0.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
     "express": "^4.16.2",
     "morgan": "^1.10.0",
+    "openai": "^4.89.0",
     "sqlite3": "^5.1.7",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.4.2"
