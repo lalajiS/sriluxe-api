@@ -17,8 +17,6 @@ const custom_tour_responsebody = require("../data/custom_tour_responsebody.json"
  * 
  */
 app.post('/custom-tour',
-    // secure_prod,
-    // auth_credentials,
     saveCustomTourRequest,
     async (req, res) => {
 
@@ -26,12 +24,12 @@ app.post('/custom-tour',
         let response_body         = { ...custom_tour_responsebody };
         response_body.num_of_days = tour_days;
 
-        let ai_content = await AI_tour_description(response_body);
+        let ai_content            = await AI_tour_description(response_body);
 
-        response_body.title       = ai_content.title;
-        response_body.description = ai_content.description;
         response_body.price       = '999';
-        response_body.db_entry    = req.savedRequestId;
+        response_body.title       = ai_content.title;
+        response_body.db_entry_id = req.savedRequestId;
+        response_body.description = ai_content.description;
         console.log('Generating Itenerary');
         response_body.itenerary   = await generateItinerary(
                                                 (req.body.starting_date),
@@ -54,11 +52,37 @@ app.post('/custom-tour',
 
 
 
+
 /**
  * 
  */
 app.get('/get-all-custom-tour-requests', getAllCustomTourRequests );
-    
+
+
+
+
+/**
+ * 
+ */
+app.get([ '/tour-details/:id',
+          '/why-choose-sl/:id',
+          '/popular-destinations/:id',
+          '/tour-packages/:id',
+          '/trending-tours/:id'],
+            async (req, res) => {
+
+            let response_body = { ...custom_tour_responsebody };
+            response_body.id  = req.params.id
+
+            log.info(`Tour details: ${req.path} / ${req.params.id} : ${JSON.stringify(response_body)}`);
+
+            return res.send({
+                status: true,
+                statusText: 'Successful',
+                data: response_body
+            })
+
+    });
 
 
 module.exports = app;

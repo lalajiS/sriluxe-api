@@ -1,11 +1,11 @@
 const app = require('express')();
 const { log } = require('../utils/logger');
 
-const why_choose_sl = require("../data/why-choose-sl.json");
-const popular_destinations = require("../data/popular-destinations.json");
-const tour_packages = require("../data/tour-packages.json");
-const trending_tours = require("../data/trending-tours.json");
-const testimonials = require("../data/testimonials.json");
+const popular_destinations  = require("../data/popular-destinations.json");
+const trending_tours        = require("../data/trending-tours.json");
+const why_choose_sl         = require("../data/why-choose-sl.json");
+const tour_packages         = require("../data/tour-packages.json");
+const testimonials          = require("../data/testimonials.json");
 
 
 
