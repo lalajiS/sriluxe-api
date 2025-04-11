@@ -1,7 +1,7 @@
 const OpenAI = require("openai");
 const { log } = require("../utils/logger");
 
-// Correctly initialize OpenAI
+
 const openAI = new OpenAI({
   apiKey: process.env.OPEN_AI_KEY
 });
@@ -19,7 +19,7 @@ const AI_tour_description = async (itineraryData) => {
   `;
 
   try {
-    // Correct API call syntax for OpenAI SDK v4
+    
     const response = await openAI.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [{ role: "system", content: prompt }],

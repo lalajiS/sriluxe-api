@@ -31,6 +31,16 @@ app.post('/custom-tour',
         response_body.title       = ai_content.title;
         response_body.description = ai_content.description;
         response_body.price       = '999';
+        response_body.db_entry    = req.savedRequestId;
+        console.log('Generating Itenerary');
+        response_body.itenerary   = await generateItinerary(
+                                                (req.body.starting_date),
+                                                (req.body.ending_date),
+                                                ('Both'),
+                                                (req.body.luxury_level),
+                                                (req.body.activity_level),
+                                                (req.body.wildlife_focus),
+                                                (req.body.cultural_depth) )
 
         log.info(`Custom Tour : ${req.savedRequestId} : ${JSON.stringify(response_body)}`);
 

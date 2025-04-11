@@ -1,4 +1,5 @@
 {
+  "tour_id": "123123123",
   "title": "5 Days Custom Trip For You",
   "banner": "https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.ft.lk/ftadmin/wp-content/files_mf/1456332744DFT16F03.jpg",
   "description": "Do ad esse adipisicing amet minim aliquip eu incididunt qui. Magna ullamco ex ex anim et qui occaecat id Lorem minim ullamco ad aute do. Ullamco aliquip irure consequat sunt incididunt. Eu cupidatat ea excepteur amet sunt ullamco enim nulla ad consectetur ex ullamco consequat.",
@@ -8,56 +9,98 @@
     {
       "day": 1,
       "destination": "Colombo (Airport)",
+      "city": "Colombo",
       "activity": "Arrival",
       "stay": "Luxury Stay",
       "hotel": "N/A",
       "latitude": 6.9271,
-      "longitude": 79.8612
+      "longitude": 79.8612,
+      "images": [
+        "https://www.shutterstock.com/image-illustration/aircraft-landing-colombo-sri-lanka-600nw-2186608333.jpg",
+        "https://www.newswire.lk/wp-content/uploads/2024/01/NYE-1.jpg",
+        "https://cdn.getyourguide.com/img/tour/5ceb810edcb2c.jpeg/146.jpg",
+        "https://feast-it-web-prod.imgix.net/d7423cb2-832c-4e14-b439-1926a313f697/WNqy0nMn04/Feast_It_colombo-street-E-TKKcoDZs.jpg?auto=format&fit=max&w=1080&q=20"
+      ]
     },
     {
       "day": 2,
       "destination": "Wild Coast Tented Lodge",
+      "city": "Kataragama",
       "activity": "Explore Wild Coast Tented Lodge",
       "stay": "Luxury Stay",
       "hotel": "Wild Coast Tented Lodge",
       "latitude": 6.262480131,
-      "longitude": 81.40684788
+      "longitude": 81.40684788,
+      "images": [
+        "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/55/dd/5f.jpg",
+        "https://nexttravelsrilanka.com/wp-content/uploads/2023/02/Yala.jpg",
+        "https://www.ugaescapes.com/wp-content/uploads/2022/01/Yala-Body-3.jpg",
+        "https://www.lovesrilanka.org/wp-content/uploads/2019/09/yala-LSL_Cropped_800x1000.jpg"
+      ]
     },
     {
       "day": 3,
       "destination": "Leopard Trails",
+      "city": "Kataragama",
       "activity": "Explore Leopard Trails",
       "stay": "Luxury Stay",
       "hotel": "Leopard Trails",
       "latitude": 6.391038702,
-      "longitude": 81.36842374
+      "longitude": 81.36842374,
+      "images": [
+        "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/55/dd/5f.jpg",
+        "https://nexttravelsrilanka.com/wp-content/uploads/2023/02/Yala.jpg",
+        "https://www.ugaescapes.com/wp-content/uploads/2022/01/Yala-Body-3.jpg",
+        "https://www.lovesrilanka.org/wp-content/uploads/2019/09/yala-LSL_Cropped_800x1000.jpg"
+      ]
     },
     {
       "day": 4,
       "destination": "Hilton Yala Resort",
+      "city": "Kataragama",
       "activity": "Explore Hilton Yala Resort",
       "stay": "Luxury Stay",
       "hotel": "Hilton Yala Resort",
       "latitude": 6.257302631,
-      "longitude": 81.40043936
+      "longitude": 81.40043936,
+      "images": [
+        "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/55/dd/5f.jpg",
+        "https://nexttravelsrilanka.com/wp-content/uploads/2023/02/Yala.jpg",
+        "https://www.ugaescapes.com/wp-content/uploads/2022/01/Yala-Body-3.jpg",
+        "https://www.lovesrilanka.org/wp-content/uploads/2019/09/yala-LSL_Cropped_800x1000.jpg"
+      ]
     },
     {
       "day": 5,
       "destination": "Uga Chena Huts",
+      "city": "Kataragama",
       "activity": "Explore Uga Chena Huts",
       "stay": "Luxury Stay",
       "hotel": "Uga Chena Huts",
       "latitude": 6.264651965,
-      "longitude": 81.41130935
+      "longitude": 81.41130935,
+      "images": [
+        "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/55/dd/5f.jpg",
+        "https://nexttravelsrilanka.com/wp-content/uploads/2023/02/Yala.jpg",
+        "https://www.ugaescapes.com/wp-content/uploads/2022/01/Yala-Body-3.jpg",
+        "https://www.lovesrilanka.org/wp-content/uploads/2019/09/yala-LSL_Cropped_800x1000.jpg"
+      ]
     },
     {
       "day": 6,
       "destination": "Colombo (Airport)",
+      "city": "Colombo",
       "activity": "Departure",
       "stay": "N/A",
       "hotel": "N/A",
       "latitude": 6.9271,
-      "longitude": 79.8612
+      "longitude": 79.8612,
+      "images": [
+        "https://www.shutterstock.com/image-illustration/aircraft-landing-colombo-sri-lanka-600nw-2186608333.jpg",
+        "https://www.newswire.lk/wp-content/uploads/2024/01/NYE-1.jpg",
+        "https://cdn.getyourguide.com/img/tour/5ceb810edcb2c.jpeg/146.jpg",
+        "https://feast-it-web-prod.imgix.net/d7423cb2-832c-4e14-b439-1926a313f697/WNqy0nMn04/Feast_It_colombo-street-E-TKKcoDZs.jpg?auto=format&fit=max&w=1080&q=20"
+      ]
     }
   ]
 }

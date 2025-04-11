@@ -24,7 +24,7 @@ function tourDays(start_date , end_date) {
 
 
 
-const generateItinerary = (starting_date, ending_date, season, luxuryLevel, activityLevel, wildlifeFocus, culturalDepth) => {
+const generateItinerary = async (starting_date, ending_date, season, luxuryLevel, activityLevel, wildlifeFocus, culturalDepth) => {
 
     const seasonalDestinations = filterDestinationsBySeason(season);
     const travelDays = tourDays(starting_date, ending_date);
@@ -51,11 +51,18 @@ const generateItinerary = (starting_date, ending_date, season, luxuryLevel, acti
         itinerary.push({
             day: i + 1,
             destination: destination.name,
+            city: destination.location,
             activity: `Explore ${destination.name}`,
             stay: luxuryLevel === 3 ? "Luxury Stay" : "Comfort Stay",
             hotel: destination.hotel,
             latitude: destination.latitude,
-            longitude: destination.longitude
+            longitude: destination.longitude,
+            images: [
+                "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/55/dd/5f.jpg",
+                "https://nexttravelsrilanka.com/wp-content/uploads/2023/02/Yala.jpg",
+                "https://www.ugaescapes.com/wp-content/uploads/2022/01/Yala-Body-3.jpg",
+                "https://www.lovesrilanka.org/wp-content/uploads/2019/09/yala-LSL_Cropped_800x1000.jpg"
+              ]
         });
     }
 
@@ -64,11 +71,18 @@ const generateItinerary = (starting_date, ending_date, season, luxuryLevel, acti
     itinerary.push({
         day: travelDays + 1,
         destination: "Colombo (Airport)",
+        city: "Colombo",
         activity: "Departure",
         stay: "N/A",
         hotel: "N/A",
         latitude: 6.9271,
-        longitude: 79.8612
+        longitude: 79.8612,
+        images: [
+            "https://www.shutterstock.com/image-illustration/aircraft-landing-colombo-sri-lanka-600nw-2186608333.jpg",
+            "https://www.newswire.lk/wp-content/uploads/2024/01/NYE-1.jpg",
+            "https://cdn.getyourguide.com/img/tour/5ceb810edcb2c.jpeg/146.jpg",
+            "https://feast-it-web-prod.imgix.net/d7423cb2-832c-4e14-b439-1926a313f697/WNqy0nMn04/Feast_It_colombo-street-E-TKKcoDZs.jpg?auto=format&fit=max&w=1080&q=20"
+        ]
     });
 
 
