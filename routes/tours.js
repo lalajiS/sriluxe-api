@@ -10,6 +10,7 @@ const {
     AI_tour_description } = require('../utils/ai');
 
 const custom_tour_responsebody = require("../data/custom_tour_responsebody.json");
+const predefined_tours = require("../data/predefined_tours.json");
 
 
 
@@ -65,14 +66,12 @@ app.get('/get-all-custom-tour-requests', getAllCustomTourRequests );
  * 
  */
 app.get([ '/tour-details/:id',
-          '/why-choose-sl/:id',
           '/popular-destinations/:id',
           '/tour-packages/:id',
           '/trending-tours/:id'],
             async (req, res) => {
 
-            let response_body = { ...custom_tour_responsebody };
-            response_body.id  = req.params.id
+            let response_body = predefined_tours.find(tour => tour.id === req.params.id);
 
             log.info(`Tour details: ${req.path} / ${req.params.id} : ${JSON.stringify(response_body)}`);
 
