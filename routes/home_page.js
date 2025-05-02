@@ -6,7 +6,7 @@ const trending_tours        = require("../data/trending-tours.json");
 const why_choose_sl         = require("../data/why-choose-sl.json");
 const tour_packages         = require("../data/tour-packages.json");
 const testimonials          = require("../data/testimonials.json");
-
+const predefined_tours      = require("../data/predefined_tours.json");
 
 
 /**
@@ -32,11 +32,14 @@ app.get('/why-choose-sl',
 app.get('/popular-destinations',
     // secure_prod,
     // auth_credentials,
-    (req, res) => {
+    async (req, res) => {
+
+        let response_body = await predefined_tours.find(tour => tour.popular_destinations === 'TRUE');
+
         return res.send({
             status: true,
             statusText: 'Successful',
-            data: popular_destinations
+            data: response_body
         })
     });
 
@@ -48,11 +51,14 @@ app.get('/popular-destinations',
 app.get('/tour-packages',
     // secure_prod,
     // auth_credentials,
-    (req, res) => {
+    async (req, res) => {
+
+        let response_body = await predefined_tours.find(tour => tour.tour_packages === 'TRUE');
+
         return res.send({
             status: true,
             statusText: 'Successful',
-            data: tour_packages
+            data: response_body
         })
     });
 
@@ -64,11 +70,14 @@ app.get('/tour-packages',
 app.get('/trending-tours',
     // secure_prod,
     // auth_credentials,
-    (req, res) => {
+    async (req, res) => {
+
+        let response_body = await predefined_tours.find(tour => tour.trending_tour === 'TRUE');
+
         return res.send({
             status: true,
             statusText: 'Successful',
-            data: trending_tours
+            data: response_body
         })
     });
 
