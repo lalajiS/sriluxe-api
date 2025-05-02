@@ -34,7 +34,7 @@ app.get('/popular-destinations',
     // auth_credentials,
     async (req, res) => {
 
-        let response_body = await predefined_tours.find(tour => tour.popular_destinations === 'TRUE');
+        let response_body = await predefined_tours.filter(tour => tour.popular_destinations === 'TRUE');
 
         return res.send({
             status: true,
@@ -53,7 +53,7 @@ app.get('/tour-packages',
     // auth_credentials,
     async (req, res) => {
 
-        let response_body = await predefined_tours.find(tour => tour.tour_packages === 'TRUE');
+        let response_body = await predefined_tours.filter(tour => tour.tour_packages === 'TRUE');
 
         return res.send({
             status: true,
@@ -72,7 +72,7 @@ app.get('/trending-tours',
     // auth_credentials,
     async (req, res) => {
 
-        let response_body = await predefined_tours.find(tour => tour.trending_tour === 'TRUE');
+        let response_body = await predefined_tours.filter(tour => tour.trending_tour === 'TRUE');
 
         return res.send({
             status: true,
