@@ -1,5 +1,5 @@
 const hotels_data = require("../data/hotels.json");
-
+const predefined_tours = require("../data/predefined_tours.json");
 
 
 
@@ -93,7 +93,24 @@ const generateItinerary = async (starting_date, ending_date, season, luxuryLevel
 
 
 
+// Filter related tours based on the number of days
+// filters the tours closest to number of days we input
+async function getRelatedToursByDays(num_of_days) {
+  
+    // Sort the array based on the absolute difference from the num_of_days
+    const sorted = [...predefined_tours].sort((a, b) => {
+      return Math.abs(a.num_of_days - num_of_days) - Math.abs(b.num_of_days - num_of_days);
+    });
+  
+    // Return the first 5 (or fewer if not enough) closest items
+    const result = await sorted.slice(0, Math.min(5, sorted.length));
+  
+    return result;
+  }
+
+
 module.exports = {
     tourDays,
-    generateItinerary
+    generateItinerary,
+    getRelatedToursByDays
 };

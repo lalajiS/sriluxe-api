@@ -5,7 +5,8 @@ const {
     getAllCustomTourRequests } = require('../utils/db');
 const { 
     tourDays,
-    generateItinerary } = require('../utils/tours');
+    generateItinerary,
+    getRelatedToursByDays } = require('../utils/tours');
 const { 
     AI_tour_description } = require('../utils/ai');
 
@@ -27,7 +28,7 @@ app.post('/custom-tour',
 
         let ai_content            = await AI_tour_description(response_body);
 
-        response_body.price       = '999';
+        response_body.price       = 'void';
         response_body.title       = ai_content.title;
         response_body.db_entry_id = req.savedRequestId;
         response_body.description = ai_content.description;
@@ -43,10 +44,13 @@ app.post('/custom-tour',
 
         log.info(`Custom Tour : ${req.savedRequestId} : ${JSON.stringify(response_body)}`);
 
+        let related_tours = await getRelatedToursByDays(tour_days);
+
         return res.send({
             status: true,
             statusText: 'Successful',
-            data: response_body
+            data: response_body,
+            realtedTours: related_tours
         })
 
     });
@@ -72,13 +76,15 @@ app.get([ '/tour-details/:id',
             async (req, res) => {
 
             let response_body = predefined_tours.find(tour => tour.id === req.params.id);
+            let related_tours = await getRelatedToursByDays(response_body.num_of_days);
 
             log.info(`Tour details: ${req.path} / ${req.params.id} : ${JSON.stringify(response_body)}`);
 
             return res.send({
                 status: true,
                 statusText: 'Successful',
-                data: response_body
+                data: response_body,
+                realtedTours: related_tours
             })
 
     });
