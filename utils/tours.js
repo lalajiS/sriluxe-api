@@ -1,7 +1,7 @@
 const hotels_data = require("../data/hotels.json");
 const predefined_tours = require("../data/predefined_tours.json");
-
-
+const { 
+    get_images_by_location } = require('../utils/images');
 
 function filterDestinationsBySeason(season) {
     return hotels_data.filter(dest => dest.season === season || dest.season === "Both");
@@ -43,7 +43,8 @@ const generateItinerary = async (starting_date, ending_date, season, luxuryLevel
         stay: luxuryLevel === 3 ? "Luxury Stay" : "Comfort Stay",
         hotel: "N/A",
         latitude: 6.9271,
-        longitude: 79.8612
+        longitude: 79.8612,
+        images: await get_images_by_location('Colombo', 4)
     });
 
     for (let i = 1; i < travelDays; i++) {
@@ -57,12 +58,7 @@ const generateItinerary = async (starting_date, ending_date, season, luxuryLevel
             hotel: destination.hotel,
             latitude: destination.latitude,
             longitude: destination.longitude,
-            images: [
-                "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/55/dd/5f.jpg",
-                "https://nexttravelsrilanka.com/wp-content/uploads/2023/02/Yala.jpg",
-                "https://www.ugaescapes.com/wp-content/uploads/2022/01/Yala-Body-3.jpg",
-                "https://www.lovesrilanka.org/wp-content/uploads/2019/09/yala-LSL_Cropped_800x1000.jpg"
-              ]
+            images: await get_images_by_location(destination.location, 4)
         });
     }
 
@@ -77,12 +73,7 @@ const generateItinerary = async (starting_date, ending_date, season, luxuryLevel
         hotel: "N/A",
         latitude: 6.9271,
         longitude: 79.8612,
-        images: [
-            "https://www.shutterstock.com/image-illustration/aircraft-landing-colombo-sri-lanka-600nw-2186608333.jpg",
-            "https://www.newswire.lk/wp-content/uploads/2024/01/NYE-1.jpg",
-            "https://cdn.getyourguide.com/img/tour/5ceb810edcb2c.jpeg/146.jpg",
-            "https://feast-it-web-prod.imgix.net/d7423cb2-832c-4e14-b439-1926a313f697/WNqy0nMn04/Feast_It_colombo-street-E-TKKcoDZs.jpg?auto=format&fit=max&w=1080&q=20"
-        ]
+        images: await get_images_by_location('Colombo', 4)
     });
 
 
@@ -109,8 +100,29 @@ async function getRelatedToursByDays(num_of_days) {
   }
 
 
+
+
+async function add_destination_img_to_itinerary(itenerary) {
+      const result = [];
+
+      for (const item of itenerary) {
+        const images = await get_images_by_location(item.destination, 4);
+        result.push({
+          ...item,
+          images
+        });
+      }
+
+      return await result;
+}
+
+async function x () {
+    return ('asfsadfadsf')
+}
+
 module.exports = {
     tourDays,
     generateItinerary,
-    getRelatedToursByDays
+    getRelatedToursByDays,
+    add_destination_img_to_itinerary
 };

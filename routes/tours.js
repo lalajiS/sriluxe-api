@@ -6,7 +6,10 @@ const {
 const { 
     tourDays,
     generateItinerary,
-    getRelatedToursByDays } = require('../utils/tours');
+    getRelatedToursByDays,
+    add_destination_img_to_itinerary } = require('../utils/tours');
+const { 
+    get_images_by_location } = require('../utils/images');
 const { 
     AI_tour_description } = require('../utils/ai');
 
@@ -76,6 +79,7 @@ app.get([ '/tour-details/:id',
             async (req, res) => {
 
             let response_body = predefined_tours.find(tour => tour.id === req.params.id);
+            response_body.itenerary = await add_destination_img_to_itinerary(response_body.itenerary)
             let related_tours = await getRelatedToursByDays(response_body.num_of_days);
 
             log.info(`Tour details: ${req.path} / ${req.params.id} : ${JSON.stringify(response_body)}`);
