@@ -34,7 +34,27 @@ app.get('/popular-destinations',
     // auth_credentials,
     async (req, res) => {
 
-        let response_body = await predefined_tours.filter(tour => tour.popular_destinations === 'TRUE');
+        // let response_body = await predefined_tours.filter(tour => tour.popular_destinations === 'TRUE');
+        let response_body = popular_destinations;
+
+        return res.send({
+            status: true,
+            statusText: 'Successful',
+            data: response_body
+        })
+    });
+
+
+
+/**
+ * 
+ */
+app.get('/popular-destination/:id',
+    // secure_prod,
+    // auth_credentials,
+    async (req, res) => {
+
+        let response_body = popular_destinations.find(tour => tour.id === req.params.id);;
 
         return res.send({
             status: true,

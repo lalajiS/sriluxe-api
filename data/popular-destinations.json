@@ -1,34 +1,119 @@
 [
-    {
-        "id": "1",
-        "title": "12 Days Sri Lanka Tour Package",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwPKoaA84r4PCkkRpdSVXzDUDj9PoruUa294HtuKiw5bZBNkYOTgyfIBrA1lLQiAiKeKo",
-        "location": "Sri Lanka",
-        "price": "840",
-        "sub_title": "Premier Experience"
-    },
-    {
-        "id": "2",
-        "title": "8 Days Sri Lanka Tour Package",
-        "image": "https://bmkltsly13vb.compat.objectstorage.ap-mumbai-1.oraclecloud.com/cdn.ft.lk/ftadmin/wp-content/files_mf/1456332744DFT16F03.jpg",
-        "location": "Sri Lanka",
-        "price": "240",
-        "sub_title": "Premier Experience"
-    },
-    {
-        "id": "3",
-        "title": "5 Days Sri Lanka Tour Package",
-        "image": "https://www.soulsrilanka.com/image/trip/05/01.jpg",
-        "location": "Sri Lanka",
-        "price": "760",
-        "sub_title": "Premier Experience"
-    },
-    {
-        "id": "4",
-        "title": "5 Days In Hill Country",
-        "image": "https://explore.vacations/wp-content/uploads/2024/12/3-12.jpg",
-        "location": "Sri Lanka",
-        "price": "550",
-        "sub_title": "Premier Experience"
-    }
+  {
+    "id": "PD01",
+    "title": "Cultural Triangle",
+    "sub_title": "Unlock the Secrets of Ancient Sri Lanka",
+    "image": "/images/tours/popular-destinations-banner.png",
+    "location": "Anuradhapura, Polonnaruwa, Sigiriya, Dambulla, Kandy",
+    "description": "Discover the soul of Sri Lanka in the iconic <strong>Cultural Triangle,</strong> where the island's ancient history comes alive. This storied region connects the ancient capitals of <strong>Anuradhapura, Polonnaruwa, and Kandy,</strong> along with the awe-inspiring rock fortress of <strong>Sigiriya</strong> and the serene cave temples of <strong>Dambulla.</strong> As you explore UNESCO World Heritage Sites, walk among towering Buddha statues, marvel at centuries-old frescoes, and absorb the mystique of sacred stupas and royal ruins.<br/><br/>At <strong>SriLuxe Escapes</strong>, we transform this cultural journey into an extraordinary luxury experience. Imagine private guided tours where your expert local host shares legends passed down through generations. Pause to reflect at sacred Bodhi trees or watch the golden sunset over the Sigiriya rock from the privacy of your boutique retreat. Our itineraries are thoughtfully designed to combine <strong>intellectual discovery with exclusive comfort</strong>, including heritage accommodations and fine dining inspired by royal recipes.<br/><br/>This journey offers <strong>a unique window into Sri Lanka’s spiritual and architectural legacy</strong>, perfectly curated for cultural explorers who seek depth, meaning, and personalization. Whether you are walking in the footsteps of ancient kings or joining in a temple blessing ceremony, your time in the Cultural Triangle promises to be both enriching and unforgettable.",
+    "luxury_level": "2",
+    "activity_level": "2",
+    "cultural_depth": "3",
+    "wildlife_focus": "1",
+    "images": []
+  },
+  {
+    "id": "PD02",
+    "title": "Hill Country Retreats",
+    "sub_title": "Breathe in the Tranquility of Sri Lanka’s Highlands",
+    "image": "/images/tours/popular-destinations-banner.png",
+    "location": "Nuwara Eliya, Ella, Haputale, Hatton, Bandarawela",
+    "description": "Escape to Sri Lanka’s enchanting highlands, where cool mountain air, rolling tea gardens, and colonial-era charm create a soothing retreat for the soul. The <strong>Hill Country</strong>—with gems like <strong>Nuwara Eliya, Ella, Haputale, and Hatton</strong>—invites travelers to slow down and reconnect with nature. Experience the romantic mist of the tea plantations, hike to panoramic viewpoints like <strong>Ella Rock</strong> or <strong>Lipton’s Seat</strong>, and watch cascading waterfalls as you relax into the rhythm of the hills.<br/><br/>At <strong>SriLuxe Escapes</strong>, we elevate this natural wonderland into a luxurious personal sanctuary. Stay at <strong>exclusive boutique tea bungalows</strong> or <strong>eco-luxury lodges<strong>, where personalized service and breathtaking views come standard. Enjoy morning high tea on the veranda overlooking the emerald hills, take guided walks through fragrant tea estates, or unwind at a tranquil spa after a day of exploring.<br/><br/>The Hill Country offers a peaceful refuge for discerning travelers who appreciate <strong>refinement with authenticity</strong>. Whether you're seeking an active hiking getaway, a quiet romantic escape, or simply a cool contrast to Sri Lanka’s tropical coasts, our customized journeys deliver serenity and luxury at every turn.",
+    "luxury_level": "3",
+    "activity_level": "2",
+    "cultural_depth": "2",
+    "wildlife_focus": "1",
+    "images": []
+  },
+  {
+    "id": "PD03",
+    "title": "South Coast Beaches",
+    "sub_title": "Surrender to Southern Luxury and Ocean Vibes",
+    "image": "/images/tours/popular-destinations-banner.png",
+    "location": "Galle, Mirissa, Unawatuna, Weligama, Tangalle",
+    "description": "Sri Lanka’s <strong>south coast</strong> is where laid-back island life meets sophisticated luxury. Stretching from the artistic colonial town of <strong>Galle</strong> to the golden sands of <strong>Mirissa, Unawatuna, Weligama, and Tangalle</strong>, this region is a playground for sunseekers, surfers, and romantic wanderers alike.<br/><br/>Explore the maze-like streets of <strong>UNESCO-listed Galle Fort</strong>, sip cocktails at sunset from an oceanfront boutique villa, or simply relax under swaying palms with the rhythm of the waves as your soundtrack. For the adventurous, the south coast offers world-class surfing at <strong>Weligama</strong>, or thrilling whale watching expeditions launching from <strong>Mirissa</strong>.<br/><br/>At <strong>SriLuxe Escapes</strong>, we create an experience that elevates your beach getaway into <strong>curated eco-luxury</strong>. Stay in <strong>exclusive beachfront villas</strong>, dine on freshly caught seafood prepared by private chefs, or sail into the horizon on a private sunset catamaran. We can also arrange meaningful experiences like visiting local sea turtle conservation projects or enjoying a secluded candlelit dinner right on the shore.<br/><br/>The south coast promises a perfect blend of <strong>relaxation, style, and coastal adventure</strong>, customized to your pace and preferences. Whether you want barefoot luxury or an active coastal itinerary, we design your perfect ocean escape.",
+    "luxury_level": "3",
+    "activity_level": "2",
+    "cultural_depth": "2",
+    "wildlife_focus": "1",
+    "images": []
+  },
+  {
+    "id": "PD04",
+    "title": "East Coast Escapes",
+    "sub_title": "Discover Sri Lanka’s Untouched Coastal Paradise",
+    "image": "/images/tours/popular-destinations-banner.png",
+    "location": "Trincomalee, Nilaveli, Pasikuda, Arugam Bay, Batticaloa",
+    "description": "For travelers craving tranquility away from the crowds, Sri Lanka’s <strong>east coast</strong> delivers untouched beauty and rich cultural intrigue. From the calm turquoise waters of <strong>Trincomalee and Nilaveli</strong> to the bohemian surf vibes of <strong>Arugam Bay</strong>, this coastline offers a more authentic, off-the-beaten-path experience.<br/><br/>Explore vibrant coral reefs while snorkeling at <strong>Pigeon Island</strong>, watch dolphins play in the waves, or discover the ancient <strong>Koneswaram Temple</strong> overlooking the bay. For the adventurous, the powerful breaks at <strong>Arugam Bay</strong> are globally renowned for world-class surfing.<br/><br/>At <strong>SriLuxe Escapes</strong>, we create an exclusive coastal journey tailored for true explorers. Stay at hand-picked <strong>eco-resorts and boutique beach hideaways</strong>, enjoy private boat safaris, or let us arrange personalized yoga and wellness retreats on peaceful, sun-drenched shores.<br/><br/>This region is perfect for travelers who seek <strong>a raw, authentic connection with nature and local culture</strong>, without sacrificing comfort. Whether it’s gliding through calm waters at sunrise or exploring vibrant Tamil heritage, your east coast adventure will leave you feeling restored and inspired.",
+    "luxury_level": "2",
+    "activity_level": "3",
+    "cultural_depth": "2",
+    "wildlife_focus": "1",
+    "images": []
+  },
+  {
+    "id": "PD05",
+    "title": "Wildlife Safaris",
+    "sub_title": "Explore the Wild in Eco-Luxury Comfort",
+    "image": "/images/tours/popular-destinations-banner.png",
+    "location": "Yala, Wilpattu, Udawalawe, Minneriya, Kaudulla, Bundala",
+    "description": "Sri Lanka is a <strong>biodiversity hotspot</strong>, home to some of the most exhilarating wildlife experiences in Asia. From tracking elusive leopards in <strong>Yala National Park</strong> to witnessing majestic elephant gatherings at <strong>Minneriya</strong> or spotting hundreds of migratory birds at <strong>Bundala</strong>, every safari promises awe-inspiring moments.<br/><br/>At <strong>SriLuxe Escapes</strong>, we offer exclusive, conservation-focused wildlife journeys designed for the eco-conscious traveler. Stay at <strong>luxury tented safari camps</strong>, enjoy <strong>private guided game drives</strong>, and witness wildlife in its natural habitat—responsibly and sustainably. Our partnerships with local conservationists mean you experience these encounters ethically and intimately, with minimal environmental impact.<br/><br/>Whether it’s photographing a lone leopard at dawn, watching baby elephants play in the wild, or observing a rare sloth bear in the dense jungles of <strong>Wilpattu</strong>, every safari is tailored to create unforgettable memories. You can also extend your journey with whale watching expeditions or birding tours to discover Sri Lanka’s rich avian life.<br/><br/>If you’re a nature lover, photographer, or simply a seeker of rare experiences, our wildlife safaris offer the perfect blend of <strong>adventure, education, and eco-luxury</strong>.",
+    "luxury_level": "3",
+    "activity_level": "2",
+    "cultural_depth": "1",
+    "wildlife_focus": "3",
+    "images": []
+  },
+  {
+    "id": "PD06",
+    "title": "Sacred Temples and Spiritual Sites",
+    "sub_title": "Connect with the Island’s Spiritual Legacy",
+    "image": "/images/tours/popular-destinations-banner.png",
+    "location": "Kandy, Dambulla, Mihintale, Anuradhapura, Kataragama",
+    "description": "Sri Lanka’s spiritual heritage runs deep, and its ancient temples and shrines offer moments of reflection, wonder, and cultural immersion. Journey through the country’s most revered spiritual sites—from the sacred <strong>Temple of the Tooth Relic</strong> in <strong>Kandy</strong> to the dramatic golden caves of <strong>Dambulla</strong>, the Buddhist monasteries of <strong>Mihintale</strong>, and the serene spiritual center of <strong>Anuradhapura</strong>.<br/><br/>Every stone, mural, and sacred tree tells a story of faith, resilience, and devotion spanning thousands of years. Whether witnessing morning pooja (rituals) at the temple or following the ancient pilgrimage trails, this journey offers a window into Sri Lanka’s Buddhist legacy.<br/><br/><strong>SriLuxe Escapes</strong> crafts your experience with sensitivity and exclusivity. Enjoy private guided tours that decode the symbolism behind the architecture, participate in traditional blessings, or meditate in tranquil forest monasteries. We also pair your spiritual journey with luxury accommodations that offer serene views and wellness amenities for true inner balance.<br/><br/>This is an experience for travelers who seek <strong>meaningful, transformative travel</strong>. Whether you want to learn, reflect, or reconnect, we ensure your journey through Sri Lanka’s spiritual heartlands is intimate and enriching.",
+    "luxury_level": "2",
+    "activity_level": "1",
+    "cultural_depth": "3",
+    "wildlife_focus": "1",
+    "images": []
+  },
+  {
+    "id": "PD07",
+    "title": "Village and Cultural Immersions",
+    "sub_title": "Live the Local Way, the Luxurious Way",
+    "image": "/images/tours/popular-destinations-banner.png",
+    "location": "Habarana, Sigiriya, Kandy outskirts, Ella villages, Knuckles foothills",
+    "description": "For travelers who believe that the true soul of a country lies with its people, <strong>Sri Lanka’s vibrant villages</strong> offer warm hospitality and rich cultural experiences. Escape the typical tourist path and discover authentic Sri Lankan life through curated visits to villages in <strong>Habarana, Sigiriya, the Kandy outskirts, Ella, and Knuckles foothills</strong>.<br/><br/>Participate in local traditions—help farmers in rice paddies, take part in traditional cooking classes, learn wood carving, or weave vibrant batik fabrics. Dine on freshly prepared village meals as your host family shares generations of stories under the stars.<br/><br/>With <strong>SriLuxe Escapes</strong>, we ensure this cultural immersion remains authentic yet supremely comfortable. We curate these experiences ethically with trusted local partners, providing you access to intimate, respectful encounters while staying at eco-luxury lodges or boutique homestays.<br/><br/>This is an experience for cultural explorers who want to connect on a deeper level, engage meaningfully, and return home with a new understanding of life on this extraordinary island.",
+    "luxury_level": "2",
+    "activity_level": "2",
+    "cultural_depth": "3",
+    "wildlife_focus": "1",
+    "images": []
+  },
+  {
+    "id": "PD08",
+    "title": "UNESCO World Heritage Sites",
+    "sub_title": "Discover Sri Lanka’s Global Treasures",
+    "image": "/images/tours/popular-destinations-banner.png",
+    "location": "Sigiriya, Polonnaruwa, Anuradhapura, Kandy, Dambulla, Sinharaja Forest, Galle Fort, Central Highlands",
+    "description": "Sri Lanka is a land of cultural and natural marvels, home to <strong>eight UNESCO World Heritage Sites</strong> that reflect its diverse legacy. Walk among the ancient ruins of <strong>Polonnaruwa and Anuradhapura</strong>, marvel at the astonishing engineering and artistry of <strong>Sigiriya Rock Fortress</strong>, stand in awe under the gilded ceilings of the <strong>Dambulla cave temples</strong>, and explore the colonial charm of <strong>Galle Fort</strong>.<br/><br/>In the highlands, trek the pristine wilderness of <strong>Horton Plains</strong> and <strong>the Knuckles Range</strong>, or venture deep into the emerald canopy of the <strong>Sinharaja Rainforest</strong>, a biodiversity hotspot teeming with rare species. Whether you’re admiring architectural ingenuity or hiking through untouched ecosystems, each site offers profound insights into Sri Lanka’s past and present.<br/><br/><strong>SriLuxe Escapes</strong> crafts seamless, personalized journeys that connect these wonders with exclusive comforts. Enjoy private tours with historians and naturalists, stay in hand-picked heritage hotels, and explore at your own pace, free from crowds.<br/><br/>This is the perfect adventure for those who wish to experience <strong>the island’s rich cultural fabric and awe-inspiring natural landscapes</strong>, delivered with the signature SriLuxe blend of eco-conscious luxury and local insight.",
+    "luxury_level": "2",
+    "activity_level": "2",
+    "cultural_depth": "3",
+    "wildlife_focus": "2",
+    "images": []
+  },
+  {
+    "id": "PD09",
+    "title": "Experience Life in a Tea Estate Bungalow",
+    "sub_title": "Savor Colonial-Era Elegance Amid Tea Gardens",
+    "image": "/images/tours/popular-destinations-banner.png",
+    "location": "Nuwara Eliya, Hatton, Dickoya, Ella, Ragala",
+    "description": "Step into a timeless world of elegance at a classic <strong>Sri Lankan tea estate bungalow</strong>, nestled among rolling emerald hills in regions like <strong>Nuwara Eliya, Hatton, Dickoya, Ella, and Ragala</strong>. These historic planter homes exude colonial charm and offer unmatched views across perfectly manicured tea fields.<br/><br/>Wake to mist drifting over the hills, enjoy gourmet breakfast served on the veranda, and stroll through fragrant tea gardens with your private guide. Take part in a <strong>guided tea-plucking experience</strong> and learn the art of making Ceylon tea from leaf to cup.<br/><br/>With <strong>SriLuxe Escapes</strong>, your experience is elevated to new levels of indulgence. Stay in <strong>intimate, fully restored estate bungalows</strong> featuring fine antiques, attentive butler service, and spa treatments designed to soothe both body and mind. Whether for romance, relaxation, or exploration, your tea country escape is fully customized for your desires.<br/><br/>This is the ideal journey for travelers seeking a unique blend of <strong>history, luxury, and serenity</strong>, where every detail whispers timeless sophistication amid nature’s quiet splendor.",
+    "luxury_level": "3",
+    "activity_level": "1",
+    "cultural_depth": "2",
+    "wildlife_focus": "1",
+    "images": []
+  }
 ]
