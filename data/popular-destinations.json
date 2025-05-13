@@ -23,7 +23,7 @@
     "activity_level": "2",
     "cultural_depth": "2",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Ella_1.jpeg","/images/destinations/Hatton_1.jpeg", "/images/destinations/Ella_1.jpeg", "/images/destinations/Ella_3.avif"]
+    "images": ["/images/destinations/Ella_1.jpeg","/images/destinations/Hatton_1.jpeg", "/images/destinations/Ella_2.jpeg", "/images/destinations/Ella_3.jpeg"]
   },
   {
     "id": "PD03",
@@ -36,7 +36,7 @@
     "activity_level": "2",
     "cultural_depth": "2",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Galle_1.jpeg","/images/destinations/Hikkaduwa_2.jpeg", "/images/destinations/Hikkaduwa_4.jpeg", "/images/destinations/Mirissa_1.avif"]
+    "images": ["/images/destinations/Galle_1.jpeg","/images/destinations/Mirissa_2.jpeg", "/images/destinations/Hikkaduwa_4.jpeg", "/images/destinations/Mirissa_1.jpeg"]
   },
   {
     "id": "PD04",
@@ -49,7 +49,7 @@
     "activity_level": "3",
     "cultural_depth": "2",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Arugam Bay_1.jpeg","/images/destinations/Arugam Bay_3.jpeg", "/images/destinations/Trincomalee_2.jpeg", "/images/destinations/Trincomalee_1.avif"]
+    "images": ["/images/destinations/Arugam Bay_1.jpeg","/images/destinations/Arugam Bay_3.jpeg", "/images/destinations/Arugam Bay_2.jpeg", "/images/destinations/Arugam Bay_4.jpeg"]
   },
   {
     "id": "PD05",
@@ -62,7 +62,7 @@
     "activity_level": "2",
     "cultural_depth": "1",
     "wildlife_focus": "3",
-    "images": ["/images/destinations/Buttala_1.jpeg","/images/destinations/Yala_1.jpeg", "/images/destinations/Yala_2.jpeg", "/images/destinations/Wasgamuwa_4.avif"]
+    "images": ["/images/destinations/Buttala_1.jpeg","/images/destinations/Yala_1.jpeg", "/images/destinations/Yala_2.jpeg", "/images/destinations/Wasgamuwa_4.jpeg"]
   },
   {
     "id": "PD06",
@@ -75,7 +75,7 @@
     "activity_level": "1",
     "cultural_depth": "3",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Anuradhapura_1.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Polonnaruwa_1.jpeg", "/images/destinations/Kataragama_1.avif"]
+    "images": ["/images/destinations/Anuradhapura_1.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Polonnaruwa_1.jpeg", "/images/destinations/Kataragama_1.jpeg"]
   },
   {
     "id": "PD07",
@@ -88,7 +88,7 @@
     "activity_level": "2",
     "cultural_depth": "3",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Ella_2.jpeg","/images/destinations/Knuckles_1.jpeg", "/images/destinations/Habarana_1.jpeg", "/images/destinations/Knuckles_2.avif"]
+    "images": ["/images/destinations/Ella_2.jpeg","/images/destinations/Knuckles_1.jpeg", "/images/destinations/Habarana_1.jpeg", "/images/destinations/Knuckles_2.jpeg"]
   },
   {
     "id": "PD08",
@@ -101,7 +101,7 @@
     "activity_level": "2",
     "cultural_depth": "3",
     "wildlife_focus": "2",
-    "images": ["/images/destinations/Anuradhapura_2.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Sinharaja_1.jpeg", "/images/destinations/Sigiriya_3.avif"]
+    "images": ["/images/destinations/Anuradhapura_2.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Sinharaja_1.jpeg", "/images/destinations/Sigiriya_3.jpeg"]
   },
   {
     "id": "PD09",
@@ -114,6 +114,6 @@
     "activity_level": "1",
     "cultural_depth": "2",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Nuwara Eliya_1.jpeg","/images/destinations/Galle_2.jpeg", "/images/destinations/Hatton_1.jpeg", "/images/destinations/Hatton_3.jpeg"]
+    "images": ["/images/destinations/Nuwara Eliya_1.jpeg","/images/destinations/Galle_2.jpeg", "/images/destinations/Hatton_2.jpeg", "/images/destinations/Nuwara Eliya_3.jpeg"]
   }
 ]
