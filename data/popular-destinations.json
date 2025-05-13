@@ -18,12 +18,12 @@
     "sub_title": "Breathe in the Tranquility of Sri Lanka’s Highlands",
     "image": "/images/tours/popular-destinations-banner.png",
     "location": "Nuwara Eliya, Ella, Haputale, Hatton, Bandarawela",
-    "description": "Escape to Sri Lanka’s enchanting highlands, where cool mountain air, rolling tea gardens, and colonial-era charm create a soothing retreat for the soul. The <strong>Hill Country</strong>—with gems like <strong>Nuwara Eliya, Ella, Haputale, and Hatton</strong>—invites travelers to slow down and reconnect with nature. Experience the romantic mist of the tea plantations, hike to panoramic viewpoints like <strong>Ella Rock</strong> or <strong>Lipton’s Seat</strong>, and watch cascading waterfalls as you relax into the rhythm of the hills.<br/><br/>At <strong>SriLuxe Escapes</strong>, we elevate this natural wonderland into a luxurious personal sanctuary. Stay at <strong>exclusive boutique tea bungalows</strong> or <strong>eco-luxury lodges<strong>, where personalized service and breathtaking views come standard. Enjoy morning high tea on the veranda overlooking the emerald hills, take guided walks through fragrant tea estates, or unwind at a tranquil spa after a day of exploring.<br/><br/>The Hill Country offers a peaceful refuge for discerning travelers who appreciate <strong>refinement with authenticity</strong>. Whether you're seeking an active hiking getaway, a quiet romantic escape, or simply a cool contrast to Sri Lanka’s tropical coasts, our customized journeys deliver serenity and luxury at every turn.",
+    "description": "Escape to Sri Lanka’s enchanting highlands, where cool mountain air, rolling tea gardens, and colonial-era charm create a soothing retreat for the soul. The <strong>Hill Country</strong>—with gems like <strong>Nuwara Eliya, Ella, Haputale, and Hatton</strong>—invites travelers to slow down and reconnect with nature. Experience the romantic mist of the tea plantations, hike to panoramic viewpoints like <strong>Ella Rock</strong> or <strong>Lipton’s Seat</strong>, and watch cascading waterfalls as you relax into the rhythm of the hills.<br/><br/>At <strong>SriLuxe Escapes</strong>, we elevate this natural wonderland into a luxurious personal sanctuary. Stay at <strong>exclusive boutique tea bungalows</strong> or <strong>eco-luxury lodges</strong>, where personalized service and breathtaking views come standard. Enjoy morning high tea on the veranda overlooking the emerald hills, take guided walks through fragrant tea estates, or unwind at a tranquil spa after a day of exploring.<br/><br/>The Hill Country offers a peaceful refuge for discerning travelers who appreciate <strong>refinement with authenticity</strong>. Whether you're seeking an active hiking getaway, a quiet romantic escape, or simply a cool contrast to Sri Lanka’s tropical coasts, our customized journeys deliver serenity and luxury at every turn.",
     "luxury_level": "3",
     "activity_level": "2",
     "cultural_depth": "2",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Ella_1.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Polonnaruwa_1.jpeg", "/images/destinations/Sigiriya_1.avif"]
+    "images": ["/images/destinations/Ella_1.jpeg","/images/destinations/Hatton_1.jpeg", "/images/destinations/Ella_1.jpeg", "/images/destinations/Ella_3.avif"]
   },
   {
     "id": "PD03",
@@ -36,7 +36,7 @@
     "activity_level": "2",
     "cultural_depth": "2",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Galle_1.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Polonnaruwa_1.jpeg", "/images/destinations/Sigiriya_1.avif"]
+    "images": ["/images/destinations/Galle_1.jpeg","/images/destinations/Hikkaduwa_2.jpeg", "/images/destinations/Hikkaduwa_4.jpeg", "/images/destinations/Mirissa_1.avif"]
   },
   {
     "id": "PD04",
@@ -49,7 +49,7 @@
     "activity_level": "3",
     "cultural_depth": "2",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Arugam Bay_1.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Polonnaruwa_1.jpeg", "/images/destinations/Sigiriya_1.avif"]
+    "images": ["/images/destinations/Arugam Bay_1.jpeg","/images/destinations/Arugam Bay_3.jpeg", "/images/destinations/Trincomalee_2.jpeg", "/images/destinations/Trincomalee_1.avif"]
   },
   {
     "id": "PD05",
@@ -62,7 +62,7 @@
     "activity_level": "2",
     "cultural_depth": "1",
     "wildlife_focus": "3",
-    "images": ["/images/destinations/Buttala_1.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Polonnaruwa_1.jpeg", "/images/destinations/Sigiriya_1.avif"]
+    "images": ["/images/destinations/Buttala_1.jpeg","/images/destinations/Yala_1.jpeg", "/images/destinations/Yala_2.jpeg", "/images/destinations/Wasgamuwa_4.avif"]
   },
   {
     "id": "PD06",
@@ -75,7 +75,7 @@
     "activity_level": "1",
     "cultural_depth": "3",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Anuradhapura_1.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Polonnaruwa_1.jpeg", "/images/destinations/Sigiriya_1.avif"]
+    "images": ["/images/destinations/Anuradhapura_1.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Polonnaruwa_1.jpeg", "/images/destinations/Kataragama_1.avif"]
   },
   {
     "id": "PD07",
@@ -88,7 +88,7 @@
     "activity_level": "2",
     "cultural_depth": "3",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Ella_1.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Habarana_1.jpeg", "/images/destinations/Sigiriya_1.avif"]
+    "images": ["/images/destinations/Ella_2.jpeg","/images/destinations/Knuckles_1.jpeg", "/images/destinations/Habarana_1.jpeg", "/images/destinations/Knuckles_2.avif"]
   },
   {
     "id": "PD08",
@@ -101,7 +101,7 @@
     "activity_level": "2",
     "cultural_depth": "3",
     "wildlife_focus": "2",
-    "images": ["/images/destinations/Anuradhapura_1.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Sinharaja_1.jpeg", "/images/destinations/Sigiriya_1.avif"]
+    "images": ["/images/destinations/Anuradhapura_2.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Sinharaja_1.jpeg", "/images/destinations/Sigiriya_3.avif"]
   },
   {
     "id": "PD09",
@@ -114,6 +114,6 @@
     "activity_level": "1",
     "cultural_depth": "2",
     "wildlife_focus": "1",
-    "images": ["/images/destinations/Nuwara Eliya_1.jpeg","/images/destinations/Kandy_1.jpeg", "/images/destinations/Polonnaruwa_1.jpeg", "/images/destinations/Sigiriya_1.avif"]
+    "images": ["/images/destinations/Nuwara Eliya_1.jpeg","/images/destinations/Galle_2.jpeg", "/images/destinations/Hatton_1.jpeg", "/images/destinations/Hatton_3.jpeg"]
   }
 ]
