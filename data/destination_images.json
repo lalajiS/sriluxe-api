@@ -8,14 +8,28 @@
   "Anuradhapura": [
     "/images/destinations/Anuradhapura_1.jpeg",
     "/images/destinations/Anuradhapura_2.jpeg",
+    "/images/destinations/Anuradhapura_3.jpeg",
     "/images/destinations/Anuradhapura_4.jpeg",
-    "/images/destinations/Anuradhapura_3.jpeg"
+    "/images/destinations/Anuradhapura_5.jpg",
+    "/images/destinations/Anuradhapura_6.jpg",
+    "/images/destinations/Anuradhapura_8.jpg",
+    "/images/destinations/Anuradhapura_9.jpg",
+    "/images/destinations/Anuradhapura_10.jpg",
+    "/images/destinations/Anuradhapura_11.jpg",
+    "/images/destinations/Anuradhapura_12.jpg",
+    "/images/destinations/Anuradhapura_13.jpg",
+    "/images/destinations/Anuradhapura_14.jpg",
+    "/images/destinations/Anuradhapura_15.jpg"
   ],
   "Arugam Bay": [
     "/images/destinations/Arugam Bay_1.jpeg",
     "/images/destinations/Arugam Bay_2.jpeg",
     "/images/destinations/Arugam Bay_3.jpeg",
-    "/images/destinations/Arugam Bay_4.jpeg"
+    "/images/destinations/Arugam Bay_4.jpeg",
+    "/images/destinations/Arugam Bay_5.jpg",
+    "/images/destinations/Arugam Bay_6.jpg",
+    "/images/destinations/Arugam Bay_7.jpg",
+    "/images/destinations/Arugam Bay_8.jpg"
   ],
   "Buttala": [
     "/images/destinations/Buttala_1.jpeg",
@@ -35,17 +49,42 @@
     "/images/destinations/Colombo_3.jpeg",
     "/images/destinations/Colombo_4.jpeg"
   ],
+  "Dambulla": [
+    "/images/destinations/Dambulla_1.jpg",
+    "/images/destinations/Dambulla_2.jpg",
+    "/images/destinations/Dambulla_3.jpg",
+    "/images/destinations/Dambulla_4.jpg",
+    "/images/destinations/Dambulla_5.jpg"
+  ],
   "Ella": [
     "/images/destinations/Ella_1.jpeg", 
     "/images/destinations/Ella_2.jpeg", 
     "/images/destinations/Ella_3.jpeg", 
-    "/images/destinations/Ella_4.jpeg"
+    "/images/destinations/Ella_4.jpeg",
+    "/images/destinations/Ella_5.jpg", 
+    "/images/destinations/Ella_6.jpg", 
+    "/images/destinations/Ella_7.jpg", 
+    "/images/destinations/Ella_8.jpg",
+    "/images/destinations/Ella_9.jpg", 
+    "/images/destinations/Ella_10.jpg", 
+    "/images/destinations/Ella_11.jpg", 
+    "/images/destinations/Ella_12.jpg",
+    "/images/destinations/Ella_13.jpg", 
+    "/images/destinations/Ella_14.jpg", 
+    "/images/destinations/Ella_15.jpg", 
+    "/images/destinations/Ella_16.jpg"
 ],
   "Galle": [
     "/images/destinations/Galle_1.jpeg", 
     "/images/destinations/Galle_2.jpeg", 
     "/images/destinations/Galle_3.jpeg", 
-    "/images/destinations/Galle_4.jpg"
+    "/images/destinations/Galle_4.jpg",
+    "/images/destinations/Galle_5.jpg", 
+    "/images/destinations/Galle_6.jpg", 
+    "/images/destinations/Galle_7.jpg", 
+    "/images/destinations/Galle_8.jpg",
+    "/images/destinations/Galle_9.jpg", 
+    "/images/destinations/Galle_10.jpg"
 ],
   "Gal Oya": [
     "/images/destinations/Gal Oya_1.jpeg",
@@ -69,42 +108,55 @@
     "/images/destinations/Hikkaduwa_2.jpeg", 
     "/images/destinations/Hikkaduwa_3.jpeg", 
     "/images/destinations/Hikkaduwa_4.jpeg"
-],
+  ],
+  "Hiriketiya": [
+    "/images/destinations/Hiriketiya_1.jpg",
+    "/images/destinations/Hiriketiya_2.jpg",
+    "/images/destinations/Hiriketiya_3.jpg",
+    "/images/destinations/Hiriketiya_4.jpg",
+    "/images/destinations/Hiriketiya_5.jpg",
+    "/images/destinations/Hiriketiya_6.jpg"
+  ],
   "Horton Plains": [
     "/images/destinations/Horton Plains_1.jpeg",
     "/images/destinations/Horton Plains_2.jpeg",
     "/images/destinations/Horton Plains_3.jpeg",
-    "/images/destinations/Horton Plains_4.jpeg"
+    "/images/destinations/Horton Plains_4.jpeg",
+    "/images/destinations/Horton Plains_5.jpg",
+    "/images/destinations/Horton Plains_6.jpg",
+    "/images/destinations/Horton Plains_7.jpg",
+    "/images/destinations/Horton Plains_8.jpg",
+    "/images/destinations/Horton Plains_9.jpg"
   ],
   "Jaffna": [
     "/images/destinations/Jaffna_1.jpeg", 
     "/images/destinations/Jaffna_2.jpeg", 
     "/images/destinations/Jaffna_3.jpeg", 
     "/images/destinations/Jaffna_4.jpg"
-],
-  "Kitulgala": [
-    "/images/destinations/Kitulgala_1.jpeg",
-    "/images/destinations/Kitulgala_2.jpeg",
-    "/images/destinations/Kitulgala_3.jpeg",
-    "/images/destinations/Kitulgala_4.jpeg"
   ],
   "Kalpitiya": [
     "/images/destinations/Kalpitiya_1.jpeg",
     "/images/destinations/Kalpitiya_2.jpeg",
+    "/images/destinations/Kalpitiya_3.jpeg",
     "/images/destinations/Kalpitiya_4.jpeg",
-    "/images/destinations/Kalpitiya_3.jpeg"
-  ],
-  "Knuckles": [
-    "/images/destinations/Knuckles_1.jpeg",
-    "/images/destinations/Knuckles_2.jpeg",
-    "/images/destinations/Knuckles_3.jpeg",
-    "/images/destinations/Knuckles_4.jpeg"
+    "/images/destinations/Kalpitiya_5.jpg",
+    "/images/destinations/Kalpitiya_6.jpg",
+    "/images/destinations/Kalpitiya_7.jpg"
   ],
   "Kandy": [
     "/images/destinations/Kandy_1.jpeg", 
     "/images/destinations/Kandy_2.jpeg", 
     "/images/destinations/Kandy_3.jpeg", 
-    "/images/destinations/Kandy_4.jpeg"
+    "/images/destinations/Kandy_4.jpeg",
+    "/images/destinations/Kandy_5.jpg", 
+    "/images/destinations/Kandy_6.jpg", 
+    "/images/destinations/Kandy_7.jpg", 
+    "/images/destinations/Kandy_8.jpg",
+    "/images/destinations/Kandy_9.jpg", 
+    "/images/destinations/Kandy_10.jpg", 
+    "/images/destinations/Kandy_11.jpg", 
+    "/images/destinations/Kandy_12.jpg",
+    "/images/destinations/Kandy_13.jpg"
 ],
   "Kataragama": [
     "/images/destinations/Kataragama_1.jpeg",
@@ -112,17 +164,43 @@
     "/images/destinations/Kataragama_3.jpeg",
     "/images/destinations/Kataragama_4.jpeg"
   ],
+  "Kitulgala": [
+    "/images/destinations/Kitulgala_1.jpeg",
+    "/images/destinations/Kitulgala_2.jpeg",
+    "/images/destinations/Kitulgala_3.jpeg",
+    "/images/destinations/Kitulgala_4.jpeg"
+  ],
+  "Knuckles": [
+    "/images/destinations/Knuckles_1.jpeg",
+    "/images/destinations/Knuckles_2.jpeg",
+    "/images/destinations/Knuckles_3.jpeg",
+    "/images/destinations/Knuckles_4.jpeg"
+  ],
   "Meemure": [
     "/images/destinations/Meemure_1.jpeg",
     "/images/destinations/Meemure_2.jpeg",
     "/images/destinations/Meemure_3.jpeg",
     "/images/destinations/Meemure_4.jpeg"
   ],
+  "Minneriya": [
+    "/images/destinations/Meemure_1.jpg",
+    "/images/destinations/Meemure_2.jpg",
+    "/images/destinations/Meemure_3.jpg",
+    "/images/destinations/Meemure_4.jpg",
+    "/images/destinations/Meemure_5.jpg",
+    "/images/destinations/Meemure_6.jpg",
+    "/images/destinations/Meemure_7.jpg",
+    "/images/destinations/Meemure_8.jpg"
+  ],
   "Mirissa": [
     "/images/destinations/Mirissa_1.jpeg",
     "/images/destinations/Mirissa_2.jpeg",
     "/images/destinations/Mirissa_3.jpeg",
-    "/images/destinations/Mirissa_4.jpeg"
+    "/images/destinations/Mirissa_4.jpeg",
+    "/images/destinations/Mirissa_5.jpg",
+    "/images/destinations/Mirissa_6.jpg",
+    "/images/destinations/Mirissa_7.jpg",
+    "/images/destinations/Mirissa_8.jpg"
   ],
   "Mahiyangana": [
     "/images/destinations/Mahiyangana_1.jpeg",
@@ -146,43 +224,92 @@
     "/images/destinations/Nuwara Eliya_1.jpeg",
     "/images/destinations/Nuwara Eliya_2.jpeg",
     "/images/destinations/Nuwara Eliya_3.jpeg",
-    "/images/destinations/Nuwara Eliya_4.jpeg"
+    "/images/destinations/Nuwara Eliya_4.jpeg",
+    "/images/destinations/Nuwara Eliya_5.jpg",
+    "/images/destinations/Nuwara Eliya_6.jpg",
+    "/images/destinations/Nuwara Eliya_7.jpg",
+    "/images/destinations/Nuwara Eliya_8.jpg",
+    "/images/destinations/Nuwara Eliya_9.jpg",
+    "/images/destinations/Nuwara Eliya_10.jpg",
+    "/images/destinations/Nuwara Eliya_11.jpg",
+    "/images/destinations/Nuwara Eliya_12.jpg"
   ],
   "Nuwaraeliya": [
     "/images/destinations/Nuwara Eliya_1.jpeg",
     "/images/destinations/Nuwara Eliya_2.jpeg",
     "/images/destinations/Nuwara Eliya_3.jpeg",
-    "/images/destinations/Nuwara Eliya_4.jpeg"
+    "/images/destinations/Nuwara Eliya_4.jpeg",
+    "/images/destinations/Nuwara Eliya_5.jpeg",
+    "/images/destinations/Nuwara Eliya_6.jpeg",
+    "/images/destinations/Nuwara Eliya_7.jpeg",
+    "/images/destinations/Nuwara Eliya_8.jpeg",
+    "/images/destinations/Nuwara Eliya_9.jpeg",
+    "/images/destinations/Nuwara Eliya_10.jpeg",
+    "/images/destinations/Nuwara Eliya_11.jpeg",
+    "/images/destinations/Nuwara Eliya_12.jpeg"
   ],
   "Ohiya": [
     "/images/destinations/Ohiya_1.jpeg", 
     "/images/destinations/Ohiya_4.jpeg", 
     "/images/destinations/Ohiya_2.jpeg", 
     "/images/destinations/Ohiya_3.jpeg"
-],
+  ],
+  "Pinnawala": [
+    "/images/destinations/Pinnawala_1.jpg",
+    "/images/destinations/Pinnawala_2.jpg",
+    "/images/destinations/Pinnawala_3.jpg",
+    "/images/destinations/Pinnawala_4.jpg"
+  ],
   "Polonnaruwa": [
     "/images/destinations/Polonnaruwa_1.jpeg",
     "/images/destinations/Polonnaruwa_2.jpeg",
     "/images/destinations/Polonnaruwa_3.jpeg",
-    "/images/destinations/Polonnaruwa_4.jpeg"
+    "/images/destinations/Polonnaruwa_4.jpeg",
+    "/images/destinations/Polonnaruwa_5.jpg",
+    "/images/destinations/Polonnaruwa_6.jpg",
+    "/images/destinations/Polonnaruwa_7.jpg",
+    "/images/destinations/Polonnaruwa_8.jpg",
+    "/images/destinations/Polonnaruwa_9.jpg",
+    "/images/destinations/Polonnaruwa_10.jpg",
+    "/images/destinations/Polonnaruwa_11.jpg",
+    "/images/destinations/Polonnaruwa_12.jpg"
   ],
   "Sigiriya": [
     "/images/destinations/Sigiriya_1.avif",
-    "/images/destinations/Sigiriya_3.jpeg",
     "/images/destinations/Sigiriya_2.avif",
-    "/images/destinations/Sigiriya_4.jpeg"
+    "/images/destinations/Sigiriya_3.jpeg",
+    "/images/destinations/Sigiriya_4.jpeg",
+    "/images/destinations/Sigiriya_5.jpg",
+    "/images/destinations/Sigiriya_6.jpg",
+    "/images/destinations/Sigiriya_7.jpg",
+    "/images/destinations/Sigiriya_8.jpg",
+    "/images/destinations/Sigiriya_9.jpg",
+    "/images/destinations/Sigiriya_10.jpg",
+    "/images/destinations/Sigiriya_11.jpg",
+    "/images/destinations/Sigiriya_12.jpg",
+    "/images/destinations/Sigiriya_13.jpg",
+    "/images/destinations/Sigiriya_14.jpg",
+    "/images/destinations/Sigiriya_15.jpg"
   ],
   "Sinharaja": [
     "/images/destinations/Sinharaja_1.jpeg",
     "/images/destinations/Sinharaja_2.jpeg",
     "/images/destinations/Sinharaja_3.jpeg",
-    "/images/destinations/Sinharaja_4.jpeg"
+    "/images/destinations/Sinharaja_4.jpeg",
+    "/images/destinations/Sinharaja_5.jpg",
+    "/images/destinations/Sinharaja_6.jpg",
+    "/images/destinations/Sinharaja_7.jpg",
+    "/images/destinations/Sinharaja_8.jpg"
   ],
   "Trincomalee": [
     "/images/destinations/Trincomalee_1.jpeg",
     "/images/destinations/Trincomalee_2.jpeg",
     "/images/destinations/Trincomalee_3.jpeg",
-    "/images/destinations/Trincomalee_4.jpg"
+    "/images/destinations/Trincomalee_4.jpg",
+    "/images/destinations/Trincomalee_5.jpg",
+    "/images/destinations/Trincomalee_6.jpg",
+    "/images/destinations/Trincomalee_7.jpg",
+    "/images/destinations/Trincomalee_8.jpg"
   ],
   "Tangalle": [
     "/images/destinations/Tangalle_1.jpeg",
@@ -212,7 +339,16 @@
     "/images/destinations/Wilpattu_1.jpeg",
     "/images/destinations/Wilpattu_2.jpeg",
     "/images/destinations/Wilpattu_3.jpeg",
-    "/images/destinations/Wilpattu_4.jpeg"
+    "/images/destinations/Wilpattu_4.jpeg",
+    "/images/destinations/Wilpattu_5.jpg",
+    "/images/destinations/Wilpattu_6.jpg",
+    "/images/destinations/Wilpattu_7.jpg",
+    "/images/destinations/Wilpattu_8.jpg",
+    "/images/destinations/Wilpattu_9.jpg",
+    "/images/destinations/Wilpattu_10.jpg",
+    "/images/destinations/Wilpattu_11.jpg",
+    "/images/destinations/Wilpattu_12.jpg",
+    "/images/destinations/Wilpattu_13.jpg"
   ],
   "Wasgamuwa": [
     "/images/destinations/Wasgamuwa_1.jpeg",
@@ -224,6 +360,25 @@
     "/images/destinations/Yala_1.jpeg", 
     "/images/destinations/Yala_2.jpeg", 
     "/images/destinations/Yala_3.jpeg", 
-    "/images/destinations/Yala_4.jpeg"
+    "/images/destinations/Yala_4.jpeg",
+    "/images/destinations/Yala_5.jpg", 
+    "/images/destinations/Yala_6.jpg", 
+    "/images/destinations/Yala_7.jpg", 
+    "/images/destinations/Yala_8.jpg",
+    "/images/destinations/Yala_9.jpg", 
+    "/images/destinations/Yala_10.jpg", 
+    "/images/destinations/Yala_11.jpg", 
+    "/images/destinations/Yala_12.jpg",
+    "/images/destinations/Yala_13.jpg", 
+    "/images/destinations/Yala_14.jpg", 
+    "/images/destinations/Yala_15.jpg", 
+    "/images/destinations/Yala_16.jpg",
+    "/images/destinations/Yala_17.jpg", 
+    "/images/destinations/Yala_18.jpg", 
+    "/images/destinations/Yala_19.jpg", 
+    "/images/destinations/Yala_20.jpg",
+    "/images/destinations/Yala_21.jpg", 
+    "/images/destinations/Yala_22.jpg", 
+    "/images/destinations/Yala_23.jpg"
   ]
 }
