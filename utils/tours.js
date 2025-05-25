@@ -38,13 +38,14 @@ const generateItinerary = async (starting_date, ending_date, season, luxuryLevel
     const itinerary = [];
     itinerary.push({
         day: 1,
-        destination: "Colombo (Airport)",
+        destination: "Designated Airport",
+        city: "Airport",
         activity: "Arrival",
         stay: luxuryLevel === 3 ? "Luxury Stay" : "Comfort Stay",
         hotel: "N/A",
         latitude: 6.9271,
         longitude: 79.8612,
-        images: await get_images_by_location('Colombo', 4)
+        images: await get_images_by_location('Airport', 4)
     });
 
     for (let i = 1; i < travelDays; i++) {
@@ -66,14 +67,14 @@ const generateItinerary = async (starting_date, ending_date, season, luxuryLevel
     // Add return to airport
     itinerary.push({
         day: travelDays + 1,
-        destination: "Colombo (Airport)",
-        city: "Colombo",
+        destination: "Designated Airport",
+        city: "Airport",
         activity: "Departure",
         stay: "N/A",
         hotel: "N/A",
         latitude: 6.9271,
         longitude: 79.8612,
-        images: await get_images_by_location('Colombo', 4)
+        images: await get_images_by_location('Airport', 4)
     });
 
 
