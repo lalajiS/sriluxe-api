@@ -11,7 +11,7 @@
     "itenerary": [
       {
         "day": 1,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": [
           "Arrival in Colombo International Airport",
@@ -115,7 +115,7 @@
       },
       {
         "day": 8,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Head for departure"],
         "stay": "N/A",
@@ -245,7 +245,7 @@
       },
       {
         "day": 8,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Leave for departure"],
         "stay": "N/A",
@@ -485,7 +485,7 @@
       },
       {
         "day": 15,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Head for departure"],
         "stay": "N/A",
@@ -511,7 +511,7 @@
     "itenerary": [
       {
         "day": 1,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": [
           "Arrival in Colombo International Airport",
@@ -702,7 +702,7 @@
       },
       {
         "day": 13,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": [
           "Morning at leisure",
@@ -878,7 +878,7 @@
       },
       {
         "day": 11,
-        "destination": "Colmbo",
+        "destination": "Airport",
         "city": "Colmbo",
         "activities": [
           "Morning at leisure",
@@ -998,7 +998,7 @@
       },
       {
         "day": 7,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Head for departure"],
         "stay": "N/A",
@@ -1121,7 +1121,7 @@
       },
       {
         "day": 7,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Morning at leisure", "Leave for departure"],
         "stay": "N/A",
@@ -1227,7 +1227,7 @@
       },
       {
         "day": 7,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Morning at leisure", "Departure"],
         "stay": "N/A",
@@ -1340,7 +1340,7 @@
       },
       {
         "day": 6,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Head for departure"],
         "stay": "N/A",
@@ -1650,7 +1650,7 @@
       },
       {
         "day": 20,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Leave for departure"],
         "stay": "N/A",
@@ -1852,7 +1852,7 @@
       },
       {
         "day": 14,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Leave for departure"],
         "stay": "N/A",
@@ -2055,7 +2055,7 @@
       },
       {
         "day": 14,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Leave for departure"],
         "stay": "N/A",
@@ -2256,7 +2256,7 @@
       },
       {
         "day": 12,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Leave for departure"],
         "stay": "N/A",
@@ -2492,7 +2492,7 @@
       },
       {
         "day": 14,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Leave for departure"],
         "stay": "N/A",
@@ -2518,7 +2518,7 @@
     "itenerary": [
       {
         "day": 1,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": [
           "Arrival in Colombo International Airport",
@@ -2707,7 +2707,7 @@
       },
       {
         "day": 14,
-        "destination": "Colombo",
+        "destination": "Airport",
         "city": "Colombo",
         "activities": ["Head for departure"],
         "stay": "N/A",
