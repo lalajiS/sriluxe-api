@@ -1,34 +1,26 @@
 [
     {
         "id": "1",
-        "title": "Best Tour Ever",
-        "banner": "https://www.reddottours.com/uploads/Landing-Pages/itinerary-landing-option-8.jpg",
-        "body": "Lorem Non ea tempor deserunt ea quis pariatur consequat nostrud.",
-        "pdf": "/blogs/pdf/Sri%20Lanka%20Travel%20Guide%20-%20Sigiriya,%20Polonnaruwa,%20Anuradhapura,%20Dambulla.pdf",
-        "posted_timestamp": "20/01/2025 10:12 AM"
+        "title": "Why Sri Lanka Is One of the World’s Most Celebrated Travel Destinations",
+        "banner": "/images/blogs/Why Sri Lanka Is One of the World’s Most Celebrated Travel Destinations.jpg",
+        "body": "Discover why Sri Lanka is winning global travel awards—from solo adventures to sustainable escapes and luxury family holidays.",
+        "pdf": "/blogs/pdf/Why Sri Lanka Is One of the World’s Most Celebrated Travel Destinations.pdf",
+        "posted_timestamp": "05/06/2025 01:12 PM"
     },
     {
         "id": "2",
-        "title": "I want to go back",
-        "banner": "https://cdn.tourradar.com/s3/serp/original/4356_BfrkPvyx.jpg",
-        "body": "Cupidatat aute qui qui mollit velit labore aute ex irure dolore laboris nulla. Aute do ad dolore exercitation veniam proident nisi quis. Eiusmod commodo qui veniam pariatur nostrud eu tempor ullamco ea fugiat adipisicing veniam. Velit ipsum cillum voluptate et. Incididunt excepteur qui dolore est. Sunt voluptate irure ea ea esse aliqua dolore id commodo aliquip aute cillum esse velit.",
-        "pdf": "/blogs/pdf/Sri%20Lanka%20Travel%20Guide%20-%20Sigiriya,%20Polonnaruwa,%20Anuradhapura,%20Dambulla.pdf",
-        "posted_timestamp": "13/02/2025 03:12 AM"
+        "title": "From Waterfalls to Oceans – Sri Lanka’s Astonishing Natural Beauty in Every Mile",
+        "banner": "/images/blogs/From Waterfalls to Oceans – Sri Lanka’s Astonishing Natural  Beauty in Every Mile.jpg",
+        "body": "From misty mountains to coral reefs, discover how Sri Lanka packs a continent’s worth of nature into one compact island.",
+        "pdf": "/blogs/pdf/.pdf",
+        "posted_timestamp": "05/06/2025 01:12 PM"
     },
     {
         "id": "3",
-        "title": "Best Tour Ever",
-        "banner": "https://www.reddottours.com/uploads/Landing-Pages/itinerary-landing-option-8.jpg",
-        "body": "Lorem Non ea tempor deserunt ea quis pariatur consequat nostrud.",
-        "pdf": "/blogs/pdf/Sri%20Lanka%20Travel%20Guide%20-%20Sigiriya,%20Polonnaruwa,%20Anuradhapura,%20Dambulla.pdf",
-        "posted_timestamp": "20/11/2024 12:12 PM"
-    },
-    {
-        "id": "4",
-        "title": "I want to go back",
-        "banner": "https://cdn.tourradar.com/s3/serp/original/4356_BfrkPvyx.jpg",
-        "body": "Cupidatat aute qui qui mollit velit labore aute ex irure dolore laboris nulla. Aute do ad dolore exercitation veniam proident nisi quis. Eiusmod commodo qui veniam pariatur nostrud eu tempor ullamco ea fugiat adipisicing veniam. Velit ipsum cillum voluptate et. Incididunt excepteur qui dolore est. Sunt voluptate irure ea ea esse aliqua dolore id commodo aliquip aute cillum esse velit.",
-        "pdf": "/blogs/pdf/Sri%20Lanka%20Travel%20Guide%20-%20Sigiriya,%20Polonnaruwa,%20Anuradhapura,%20Dambulla.pdf",
-        "posted_timestamp": "22/02/2025 06:12 AM"
+        "title": "The Rich Cultural Heritage of Sri Lanka – A Tapestry Woven Over Millennia",
+        "banner": "/images/blogs/The Rich Cultural Heritage of Sri Lanka – A Tapestry Woven Over Millennia.jpg",
+        "body": "Journey through 2,500 years of Sri Lankan civilization, from ancient kingdoms to diverse cultures and colonial legacies.",
+        "pdf": "/blogs/pdf/The Rich Cultural Heritage of Sri Lanka – A Tapestry Woven Over Millennia.pdf",
+        "posted_timestamp": "05/06/2025 01:12 PM"
     }
 ]
