@@ -22,5 +22,37 @@
         "body": "Journey through 2,500 years of Sri Lankan civilization, from ancient kingdoms to diverse cultures and colonial legacies.",
         "pdf": "/blogs/pdf/The Rich Cultural Heritage of Sri Lanka – A Tapestry Woven Over Millennia.pdf",
         "posted_timestamp": "05/06/2025 01:12 PM"
+    },
+    {
+        "id": "4",
+        "title": " A Journey Through the Flavorful Food Culture of Sri Lanka",
+        "banner": "/images/blogs/A Journey Through the Flavorful Food Culture of Sri Lanka.jpg",
+        "body": "Dive into Sri Lanka’s vibrant food culture—street eats, spice trails, and immersive culinary experiences with SriLuxe Escapes.",
+        "pdf": "/blogs/pdf/A Journey Through the Flavorful Food Culture of Sri Lanka.pdf",
+        "posted_timestamp": "05/06/2025 01:12 PM"
+    },
+    {
+        "id": "5",
+        "title": "The Legendary Warmth of Sri Lankan Hospitality",
+        "banner": "/images/blogs/The Legendary Warmth of Sri Lankan Hospitality.jpg",
+        "body": "Discover how Sri Lanka’s ancient traditions and heartfelt generosity create one of the world’s most unforgettable hospitality cultures.",
+        "pdf": "/blogs/pdf/The Legendary Warmth of Sri Lankan Hospitality.pdf",
+        "posted_timestamp": "05/06/2025 01:12 PM"
+    },
+    {
+        "id": "6",
+        "title": "The Leopards of Sri Lanka – The Elusive Kings of the Jungle",
+        "banner": "/images/blogs/The Rich Cultural Heritage of Sri Lanka – A Tapestry Woven Over Millennia.jpg",
+        "body": "Track the elusive Sri Lankan leopard on eco-luxury safaris designed for unforgettable encounters and ethical wildlife photography.",
+        "pdf": "/blogs/pdf/The Leopards of Sri Lanka – The Elusive Kings of the Jungle.pdf",
+        "posted_timestamp": "05/06/2025 01:12 PM"
+    },
+    {
+        "id": "7",
+        "title": "The Gentle Giants of Sri Lanka – Encountering Elephants and Majestic Tuskers",
+        "banner": "/images/blogs/The Gentle Giants of Sri Lanka – Encountering Elephants and Majestic Tuskers.jpg",
+        "body": "Experience unforgettable close encounters with Sri Lanka’s elephants—from tuskers to playful calves—through ethical, luxury safaris.",
+        "pdf": "/blogs/pdf/The Gentle Giants of Sri Lanka – Encountering Elephants and Majestic Tuskers.pdf",
+        "posted_timestamp": "05/06/2025 01:12 PM"
     }
 ]
