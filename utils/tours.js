@@ -117,9 +117,8 @@ async function add_destination_img_to_itinerary(itenerary) {
       return await result;
 }
 
-async function x () {
-    return ('asfsadfadsf')
-}
+
+
 
 module.exports = {
     tourDays,
