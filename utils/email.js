@@ -12,7 +12,7 @@ async function sendEmail(subject, body_text) {
 
   // Define the email details
   const mailOptions = {
-    from   : process.env.EMAIL_USERNAME, // sender address
+    from   : process.env.EMAIL_USERNAME,  // sender address
     to     : process.env.EMAIL_RECEIPIENTS,        // list of recipients
     subject: subject,
     text   : body_text, // plain text body

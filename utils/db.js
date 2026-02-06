@@ -35,6 +35,23 @@ db.serialize(() => {
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )`);
 
+    const tour_enquiry_reqs = (`
+        CREATE TABLE IF NOT EXISTS 
+        tour_enquiry_reqs (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            email TEXT,
+            phone_code TEXT,
+            phone_number TEXT,
+            name TEXT,
+            country TEXT,
+            starting_date TEXT,
+            ending_date TEXT,
+            group_type TEXT,
+            tour_id TEXT,
+            user_agent TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )`);
+
     const contact_reqs = (`
         CREATE TABLE IF NOT EXISTS 
         contact_reqs (
@@ -52,6 +69,10 @@ db.serialize(() => {
         db.run(custom_tour_reqs, (err) => {
             if (err) log.error(`DB custom_tour_reqs : ${err.message}`);
         });
+
+        db.run(tour_enquiry_reqs, (err) => {
+            if (err) log.error(`DB tour_enquiry_reqs : ${err.message}`);
+        });
         
         db.run(contact_reqs, (err) => {
             if (err) log.error(`DB contact_reqs : ${err.message}`);
@@ -67,6 +88,18 @@ const saveCustomTourRequest = (req, res, next) => {
     const userAgent = req.headers['user-agent'];
 
     db.run(`INSERT INTO custom_tour_reqs (email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, luxury_level, activity_level, cultural_depth, wildlife_focus, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, luxury_level, activity_level, cultural_depth, wildlife_focus, userAgent], function (err) {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        req.savedRequestId = this.lastID;
+        next();
+    });
+};
+const saveTourEnquiryRequest = (req, res, next) => {
+    const { email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, tour_id } = req.body;
+    const userAgent = req.headers['user-agent'];
+
+    db.run(`INSERT INTO tour_enquiry_reqs (email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, tour_id, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, tour_id, userAgent], function (err) {
         if (err) {
             return res.status(500).json({ error: err.message });
         }
@@ -98,6 +131,14 @@ const getAllCustomTourRequests = (req, res) => {
         return res.json(rows);
     });
 };
+const getAllTourEnquiryRequests = (req, res) => {
+    db.all('SELECT * FROM tour_enquiry_reqs', [], (err, rows) => {
+        if (err) {
+            return res.status(500).json({ error: err.message });
+        }
+        return res.json(rows);
+    });
+};
 const getAllContactRequests = (req, res) => {
     db.all('SELECT * FROM contact_reqs', [], (err, rows) => {
         if (err) {
@@ -111,8 +152,10 @@ const getAllContactRequests = (req, res) => {
 
 module.exports = { 
     db, 
-    saveContactRequest, 
+    saveContactRequest,
     saveCustomTourRequest, 
+    saveTourEnquiryRequest, 
     getAllContactRequests,
     getAllCustomTourRequests,
+    getAllTourEnquiryRequests
 };

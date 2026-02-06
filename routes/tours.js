@@ -2,7 +2,9 @@ const app = require('express')();
 const { log } = require('../utils/logger');
 const { 
     saveCustomTourRequest,
-    getAllCustomTourRequests } = require('../utils/db');
+    saveTourEnquiryRequest,
+    getAllCustomTourRequests,
+    getAllTourEnquiryRequests } = require('../utils/db');
 const { 
     tourDays,
     generateItinerary,
@@ -12,6 +14,7 @@ const {
     get_images_by_location } = require('../utils/images');
 const { 
     AI_tour_description } = require('../utils/ai');
+const { sendEmail } = require('../utils/email');
 
 const custom_tour_responsebody = require("../data/custom_tour_responsebody.json");
 const predefined_tours = require("../data/predefined_tours.json");
@@ -60,11 +63,35 @@ app.post('/custom-tour',
 
 
 
+/**
+ * 
+ */
+app.post('/tour-enquiry',
+    saveTourEnquiryRequest,
+    async (req, res) => {
+
+        let user_details     = req.body;
+        let tour_details     = predefined_tours.find(tour => tour.id === req.body.tour_id);
+
+        // notify the officials of this enqiry
+        await sendEmail('New Tour Inquiry', `User : <pre> ${JSON.stringify(user_details, undefined, 2)}</pre> <br/><br/> Tour : <pre> ${JSON.stringify(tour_details, undefined, 2)}</pre>` );
+
+        return res.send({
+            status: true,
+            statusText: 'Successful'
+        })
+
+    });
+
+
+
+
 
 /**
  * 
  */
 app.get('/get-all-custom-tour-requests', getAllCustomTourRequests );
+app.get('/get-all-tour-enquiry-requests', getAllTourEnquiryRequests );
 
 
 
