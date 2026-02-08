@@ -1,5 +1,23 @@
 const nodemailer = require('nodemailer');
 
+// Helper: Convert any JSON object to a readable HTML table
+function jsonToHtmlTable(obj) {
+  if (!obj || typeof obj !== 'object') return '';
+  return `<table style="width:100%; border-collapse:collapse; font-size:16px;">
+    ${Object.entries(obj).map(([key, value]) => `
+      <tr>
+        <td style="padding:8px; font-weight:bold; background:#f2f2f2;">${toTitleCase(key)}</td>
+        <td style="padding:8px;">${typeof value === 'object' && value !== null ? `<pre style='margin:0;'>${JSON.stringify(value, null, 2)}</pre>` : String(value)}</td>
+      </tr>
+    `).join('')}
+  </table>`;
+}
+
+  function toTitleCase(str) {
+    return str.replace(/_/g, ' ').replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+  }
+
+
 async function sendEmail(subject, body_text) {
   // Create a transporter using Yahoo's SMTP server details
   const transporter = nodemailer.createTransport({
@@ -37,8 +55,8 @@ async function sendEmail(subject, body_text) {
                         color: #fff;
                         background-color: #FF6F61; /* Tropical Coral */
                         padding: 1px;
-                        border-radius: 10px;
-                        font-size: 20px;
+                        border-radius: 16px;
+                        font-size: 16px;
                       }
                       .email-body {
                         margin-top: 20px;
@@ -64,17 +82,17 @@ async function sendEmail(subject, body_text) {
                   <body>
                     <div class="email-container">
                       <div class="email-header">
-                        <h1>SRILUXESCAPE API</h1>
+                        <h1>Sri Luxe Escapes</h1>
                       </div>
                       <div class="email-body">
                         <h2 class="email-title">${subject}</h2>
-                        <p>${body_text}</p>
+                        ${body_text}
                       </div>
                       <br/>
                       <br/>
                       <hr/>
                       <div class="footer">
-                        <p>&copy; 2025 SRILUXESCAPE API. All rights reserved.</p>
+                        <p>&copy; 2026 Sri Luxe Escapes. All rights reserved.</p>
                       </div>
                     </div>
                   </body>
@@ -92,5 +110,6 @@ async function sendEmail(subject, body_text) {
 
 
 module.exports = {
-    sendEmail
+    sendEmail,
+    jsonToHtmlTable
 }
