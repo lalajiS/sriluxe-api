@@ -4,20 +4,20 @@ const {
     saveCustomTourRequest,
     saveTourEnquiryRequest,
     getAllCustomTourRequests,
-    getAllTourEnquiryRequests } = require('../utils/db');
+    getAllTourEnquiryRequests,
+    getAllGeneratedCustomTours,
+    saveGeneratedCustomTour,
+    getFullCustomTourData
+} = require('../utils/db'); 
 const {
-    tourDays,
-    generateItinerary,
     getRelatedToursByDays,
-    add_destination_img_to_itinerary } = require('../utils/tours');
-const {
-    get_images_by_location } = require('../utils/images');
-const {
-    AI_tour_description } = require('../utils/ai');
+    add_destination_img_to_itinerary,
+    generateCustomTour } = require('../utils/tours');
 const { sendEmail,
-        jsonToHtmlTable } = require('../utils/email');
+        jsonToHtmlTable,
+        renderCustomTourHtml,
+        deepJsonToHtmlTable } = require('../utils/email');
 
-const custom_tour_responsebody = require("../data/custom_tour_responsebody.json");
 const predefined_tours = require("../data/predefined_tours.json");
 
 
@@ -27,37 +27,44 @@ const predefined_tours = require("../data/predefined_tours.json");
  */
 app.post('/custom-tour',
     saveCustomTourRequest,
+    generateCustomTour,
+    saveGeneratedCustomTour,
     async (req, res) => {
 
-        let tour_days = tourDays(req.body.starting_date, req.body.ending_date);
-        let response_body = { ...custom_tour_responsebody };
-        response_body.num_of_days = tour_days;
-
-        let ai_content = await AI_tour_description(response_body);
-
-        response_body.price = 'void';
-        response_body.title = ai_content.title;
-        response_body.db_entry_id = req.savedRequestId;
-        response_body.description = ai_content.description;
-        console.log('Generating Itenerary');
-        response_body.itenerary = await generateItinerary(
-            (req.body.starting_date),
-            (req.body.ending_date),
-            ('Both'),
-            (req.body.luxury_level),
-            (req.body.activity_level),
-            (req.body.wildlife_focus),
-            (req.body.cultural_depth))
-
-        log.info(`Custom Tour : ${req.savedRequestId} : ${JSON.stringify(response_body)}`);
-
-        let related_tours = await getRelatedToursByDays(tour_days);
+        req.body.custom_tour.custom_tour_id = req.savedGeneratedTourId;
 
         return res.send({
             status: true,
             statusText: 'Successful',
-            data: response_body,
-            realtedTours: related_tours
+            data: req.body.custom_tour,
+            realtedTours: req.body.related_tours
+        })
+
+    });
+
+
+
+/**
+ * 
+ */
+app.post('/custom-tour-enquiry',
+    getFullCustomTourData,
+    async (req, res) => {
+
+        req.tour_data.custom_tour_request.starting_date = convertToUSDateFormat(req.tour_data.custom_tour_request.starting_date);
+        req.tour_data.custom_tour_request.ending_date = convertToUSDateFormat(req.tour_data.custom_tour_request.ending_date);
+        req.tour_data.custom_tour_request.phone = (`${req.tour_data.custom_tour_request.phone_code} ${req.tour_data.custom_tour_request.phone_number}`);
+        
+        delete req.tour_data.custom_tour_request.phone_code;
+        delete req.tour_data.custom_tour_request.phone_number;
+        
+        // notify the officials of this enqiry
+        await sendEmail('Custom Tour Inquiry', renderCustomTourHtml(req.tour_data));
+
+        return res.send({
+            status: true,
+            statusText: 'Successful',
+            data: req.tour_data
         })
 
     });
@@ -104,6 +111,7 @@ app.post('/tour-enquiry',
  */
 app.get('/get-all-custom-tour-requests', getAllCustomTourRequests);
 app.get('/get-all-tour-enquiry-requests', getAllTourEnquiryRequests);
+app.get('/get-all-generated-custom-tours', getAllGeneratedCustomTours);
 
 
 

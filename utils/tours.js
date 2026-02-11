@@ -2,6 +2,10 @@ const hotels_data = require("../data/hotels.json");
 const predefined_tours = require("../data/predefined_tours.json");
 const { 
     get_images_by_location } = require('../utils/images');
+const custom_tour_responsebody = require("../data/custom_tour_responsebody.json");
+const {
+    AI_tour_description } = require('../utils/ai');
+const { log } = require('../utils/logger');
 
 function filterDestinationsBySeason(season) {
     return hotels_data.filter(dest => dest.season === season || dest.season === "Both");
@@ -117,12 +121,43 @@ async function add_destination_img_to_itinerary(itenerary) {
       return await result;
 }
 
+const generateCustomTour = async (req, res, next) => {
+    let tour_days = tourDays(req.body.starting_date, req.body.ending_date);
+    let custom_tour = { ...custom_tour_responsebody };
+        custom_tour.num_of_days = tour_days;
+        custom_tour.custom_tour_req_id = req.savedRequestId;
+    
+    let ai_content = await AI_tour_description(custom_tour);
+    
+            custom_tour.price = 'void';
+            custom_tour.title = ai_content.title;
+            custom_tour.db_entry_id = req.savedRequestId;
+            custom_tour.description = ai_content.description;
+            console.log('Generating Itenerary');
+            custom_tour.itenerary = await generateItinerary(
+                (req.body.starting_date),
+                (req.body.ending_date),
+                ('Both'),
+                (req.body.luxury_level),
+                (req.body.activity_level),
+                (req.body.wildlife_focus),
+                (req.body.cultural_depth))
+    
+    log.info(`Custom Tour : ${req.savedRequestId} : ${JSON.stringify(custom_tour)}`);
+    
+    let related_tours = await getRelatedToursByDays(tour_days);
+    req.body.custom_tour = custom_tour;
+    req.body.related_tours = related_tours;
 
+    return next();
+
+}
 
 
 module.exports = {
     tourDays,
     generateItinerary,
+    generateCustomTour,
     getRelatedToursByDays,
     add_destination_img_to_itinerary
 };
