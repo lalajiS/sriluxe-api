@@ -1,156 +1,90 @@
 const { log } = require('./logger');
 
-const sqlite3 = require('sqlite3').verbose();
-
-const db = new sqlite3.Database('./internal_db.db', (err) => {
-    if (err) {
-        log.error(`Error opening database:  ${err.message}`);
-    } else {
-        log.info('Connected to the SQLite database.');
-    }
+const mysql = require('mysql2');
+const db = mysql.createPool({
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+  port: process.env.MYSQL_PORT
 });
 
-
-
-// initialise DB tables
-db.serialize(() => {
-
-    const custom_tour_reqs = (`
-        CREATE TABLE IF NOT EXISTS 
-        custom_tour_reqs (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            email TEXT,
-            phone_code TEXT,
-            phone_number TEXT,
-            name TEXT,
-            country TEXT,
-            starting_date TEXT,
-            ending_date TEXT,
-            group_type TEXT,
-            luxury_level TEXT,
-            activity_level TEXT,
-            cultural_depth TEXT,
-            wildlife_focus TEXT,
-            user_agent TEXT,
-            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-        )`);
-
-    const tour_enquiry_reqs = (`
-        CREATE TABLE IF NOT EXISTS 
-        tour_enquiry_reqs (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            email TEXT,
-            phone_code TEXT,
-            phone_number TEXT,
-            name TEXT,
-            country TEXT,
-            starting_date TEXT,
-            ending_date TEXT,
-            group_type TEXT,
-            tour_id TEXT,
-            user_agent TEXT,
-            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-        )`);
-
-    const contact_reqs = (`
-        CREATE TABLE IF NOT EXISTS 
-        contact_reqs (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            email TEXT,
-            phone_number TEXT,
-            name TEXT,
-            purpose TEXT,
-            message TEXT,
-            user_agent TEXT,
-            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-        )`);
-
-    const generated_custom_tours = (`
-        CREATE TABLE IF NOT EXISTS 
-        generated_custom_tours (
-            custom_tour_id INTEGER PRIMARY KEY AUTOINCREMENT,
-            title TEXT,
-            banner TEXT,
-            description TEXT,
-            num_of_days INTEGER,
-            price TEXT,
-            itenerary TEXT,
-            custom_tour_req_id INTEGER,
-            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-        )`);
-
-        db.run(custom_tour_reqs, (err) => {
-            if (err) log.error(`DB custom_tour_reqs : ${err.message}`);
-        });
-
-        db.run(tour_enquiry_reqs, (err) => {
-            if (err) log.error(`DB tour_enquiry_reqs : ${err.message}`);
-        });
-        
-        db.run(contact_reqs, (err) => {
-            if (err) log.error(`DB contact_reqs : ${err.message}`);
-        });
-
-            db.run(generated_custom_tours, (err) => {
-                if (err) log.error(`DB generated_custom_tours : ${err.message}`);
-            });
-    
-});
 
 
 
 // Middleware to save request body
 // Middleware to save generated custom tour
 const saveGeneratedCustomTour = (req, res, next) => {
+    log.info('saveGeneratedCustomTour called: ' + JSON.stringify({ body: req.body }));
     const { title, banner, description, num_of_days, price, itenerary, custom_tour_req_id } = req.body.custom_tour;
     const iteneraryStr = JSON.stringify(itenerary);
-    db.run(
+    db.query(
         `INSERT INTO generated_custom_tours (title, banner, description, num_of_days, price, itenerary, custom_tour_req_id) VALUES (?, ?, ?, ?, ?, ?, ?)`,
         [title, banner, description, num_of_days, price, iteneraryStr, custom_tour_req_id],
-        function (err) {
+        (err, results) => {
+            if (err) log.error('saveGeneratedCustomTour error: ' + JSON.stringify({ error: err, values: [title, banner, description, num_of_days, price, iteneraryStr, custom_tour_req_id] }));
             if (err) {
                 return res.status(500).json({ error: err.message });
             }
-            req.savedGeneratedTourId = this.lastID;
+            log.info('saveGeneratedCustomTour success: ' + JSON.stringify({ insertId: results.insertId }));
+            req.savedGeneratedTourId = results.insertId;
             next();
         }
     );
 };
 const saveCustomTourRequest = (req, res, next) => {
+    log.info('saveCustomTourRequest called: ' + JSON.stringify({ body: req.body }));
     const { email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, luxury_level, activity_level, cultural_depth, wildlife_focus } = req.body;
     const userAgent = req.headers['user-agent'];
-
-    db.run(`INSERT INTO custom_tour_reqs (email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, luxury_level, activity_level, cultural_depth, wildlife_focus, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, luxury_level, activity_level, cultural_depth, wildlife_focus, userAgent], function (err) {
-        if (err) {
-            return res.status(500).json({ error: err.message });
+    db.query(
+        `INSERT INTO custom_tour_reqs (email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, luxury_level, activity_level, cultural_depth, wildlife_focus, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, luxury_level, activity_level, cultural_depth, wildlife_focus, userAgent],
+        (err, results) => {
+            if (err) log.error('saveCustomTourRequest error: ' + JSON.stringify({ error: err, values: [email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, luxury_level, activity_level, cultural_depth, wildlife_focus, userAgent] }));
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            log.info('saveCustomTourRequest success: ' + JSON.stringify({ insertId: results.insertId }));
+            req.savedRequestId = results.insertId;
+            next();
         }
-        req.savedRequestId = this.lastID;
-        next();
-    });
+    );
 };
 const saveTourEnquiryRequest = (req, res, next) => {
+    log.info('saveTourEnquiryRequest called: ' + JSON.stringify({ body: req.body }));
     const { email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, tour_id } = req.body;
     const userAgent = req.headers['user-agent'];
-
-    db.run(`INSERT INTO tour_enquiry_reqs (email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, tour_id, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, tour_id, userAgent], function (err) {
-        if (err) {
-            return res.status(500).json({ error: err.message });
+    db.query(
+        `INSERT INTO tour_enquiry_reqs (email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, tour_id, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, tour_id, userAgent],
+        (err, results) => {
+            if (err) log.error('saveTourEnquiryRequest error: ' + JSON.stringify({ error: err, values: [email, phone_code, phone_number, name, country, starting_date, ending_date, group_type, tour_id, userAgent] }));
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            log.info('saveTourEnquiryRequest success: ' + JSON.stringify({ insertId: results.insertId }));
+            req.savedRequestId = results.insertId;
+            next();
         }
-        req.savedRequestId = this.lastID;
-        next();
-    });
+    );
 };
 const saveContactRequest = (req, res, next) => {
+    log.info('saveContactRequest called: ' + JSON.stringify({ body: req.body }));
     const { email, phone_number, name, purpose, message } = req.body;
     const userAgent = req.headers['user-agent'];
-
-    db.run(`INSERT INTO contact_reqs (email, phone_number, name, purpose, message, user_agent) VALUES (?, ?, ?, ?, ?, ?)`, [email, phone_number, name, purpose, message, userAgent], function (err) {
-        if (err) {
-            return res.status(500).json({ error: err.message });
+    db.query(
+        `INSERT INTO contact_reqs (email, phone_number, name, purpose, message, user_agent) VALUES (?, ?, ?, ?, ?, ?)`,
+        [email, phone_number, name, purpose, message, userAgent],
+        (err, results) => {
+            if (err) log.error('saveContactRequest error: ' + JSON.stringify({ error: err, values: [email, phone_number, name, purpose, message, userAgent] }));
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
+            log.info('saveContactRequest success: ' + JSON.stringify({ insertId: results.insertId }));
+            req.savedRequestId = results.insertId;
+            next();
         }
-        req.savedRequestId = this.lastID;
-        next();
-    });
+    );
 };
 
 
@@ -158,43 +92,56 @@ const saveContactRequest = (req, res, next) => {
 // Functions to get all records
 // Function to get all generated custom tours
 const getAllGeneratedCustomTours = (req, res) => {
-    db.all('SELECT * FROM generated_custom_tours', [], (err, rows) => {
+    log.info('getAllGeneratedCustomTours called');
+    db.query('SELECT * FROM generated_custom_tours', [], (err, rows) => {
+        if (err) log.error('getAllGeneratedCustomTours error: ' + JSON.stringify({ error: err }));
         if (err) {
             return res.status(500).json({ error: err.message });
         }
         // Parse itinerary JSON for each row
         const parsedRows = rows.map(row => ({
             ...row,
-            itenerary: row.itenerary ? JSON.parse(row.itenerary) : []
+            itenerary: row.itenerary
+                ? (typeof row.itenerary === 'string' ? JSON.parse(row.itenerary) : row.itenerary)
+                : []
         }));
+        log.info('getAllGeneratedCustomTours success: ' + JSON.stringify({ count: parsedRows.length }));
         return res.json(parsedRows);
     });
 };
 
 // Middleware to get combined custom_tour_req and generated_custom_tour by custom_tour_req_id
 const getFullCustomTourData = (req, res, next) => {
+    log.info('getFullCustomTourData called: ' + JSON.stringify({ body: req.body }));
     const { custom_tour_req_id, custom_tour_id } = req.body;
-    db.get('SELECT * FROM custom_tour_reqs WHERE id = ?', [custom_tour_req_id], (err, reqRow) => {
+    db.query('SELECT * FROM custom_tour_reqs WHERE id = ?', [custom_tour_req_id], (err, reqResults) => {
+        if (err) log.error('getFullCustomTourData custom_tour_reqs error: ' + JSON.stringify({ error: err }));
         if (err) {
             return res.status(500).json({ error: err.message });
         }
-        if (!reqRow) {
+        if (!reqResults || reqResults.length === 0) {
             return res.status(404).json({ error: 'Custom tour request not found' });
         }
-        db.get('SELECT * FROM generated_custom_tours WHERE custom_tour_id = ?', [custom_tour_id], (err, tourRow) => {
+        const reqRow = reqResults[0];
+        db.query('SELECT * FROM generated_custom_tours WHERE custom_tour_id = ?', [custom_tour_id], (err, tourResults) => {
+            if (err) log.error('getFullCustomTourData generated_custom_tours error: ' + JSON.stringify({ error: err }));
             if (err) {
                 return res.status(500).json({ error: err.message });
             }
-            if (!tourRow) {
+            if (!tourResults || tourResults.length === 0) {
                 return res.status(404).json({ error: 'Generated custom tour not found' });
             }
-            tourRow.itenerary = tourRow.itenerary ? JSON.parse(tourRow.itenerary) : [];
-            // Combine and send
+            const tourRow = tourResults[0];
+            tourRow.itenerary = tourRow.itenerary
+                ? (typeof tourRow.itenerary === 'string' ? JSON.parse(tourRow.itenerary) : tourRow.itenerary)
+                : [];
             req.tour_data = ({
+                // Optionally log the combined data
+                // log.info('getFullCustomTourData success', { custom_tour_request: reqRow, generated_custom_tour: tourRow });
                 custom_tour_request: reqRow,
                 generated_custom_tour: tourRow
             });
-
+            log.info('getFullCustomTourData success: ' + JSON.stringify({ custom_tour_req_id, custom_tour_id }));
             return next();
         });
     });
@@ -202,40 +149,54 @@ const getFullCustomTourData = (req, res, next) => {
 
 // Function to get generated custom tour by custom_tour_id
 const getGeneratedCustomTourByReqId = (req, res) => {
+    log.info('getGeneratedCustomTourByReqId called: ' + JSON.stringify({ params: req.params }));
     const { custom_tour_id } = req.params;
-    db.get('SELECT * FROM generated_custom_tours WHERE custom_tour_id = ?', [custom_tour_id], (err, row) => {
+    db.query('SELECT * FROM generated_custom_tours WHERE custom_tour_id = ?', [custom_tour_id], (err, results) => {
+        if (err) log.error('getGeneratedCustomTourByReqId error: ' + JSON.stringify({ error: err }));
         if (err) {
             return res.status(500).json({ error: err.message });
         }
-        if (!row) {
+        if (!results || results.length === 0) {
             return res.status(404).json({ error: 'Custom tour not found' });
         }
-        // Parse itinerary JSON
-        row.itenerary = row.itenerary ? JSON.parse(row.itenerary) : [];
+        const row = results[0];
+        row.itenerary = row.itenerary
+            ? (typeof row.itenerary === 'string' ? JSON.parse(row.itenerary) : row.itenerary)
+            : [];
+        log.info('getGeneratedCustomTourByReqId success: ' + JSON.stringify({ custom_tour_id }));
         return res.json(row);
     });
 };
 const getAllCustomTourRequests = (req, res) => {
-    db.all('SELECT * FROM custom_tour_reqs', [], (err, rows) => {
+    log.info('getAllCustomTourRequests called');
+    db.query('SELECT * FROM custom_tour_reqs', [], (err, rows) => {
+        if (err) log.error('getAllCustomTourRequests error: ' + JSON.stringify({ error: err }));
         if (err) {
             return res.status(500).json({ error: err.message });
         }
+        log.info('getAllCustomTourRequests success: ' + JSON.stringify({ count: rows.length }));
         return res.json(rows);
     });
 };
 const getAllTourEnquiryRequests = (req, res) => {
-    db.all('SELECT * FROM tour_enquiry_reqs', [], (err, rows) => {
+    log.info('getAllTourEnquiryRequests called');
+    db.query('SELECT * FROM tour_enquiry_reqs', [], (err, rows) => {
+        if (err) log.error('getAllTourEnquiryRequests error: ' + JSON.stringify({ error: err }));
         if (err) {
             return res.status(500).json({ error: err.message });
         }
+        log.info('getAllTourEnquiryRequests success: ' + JSON.stringify({ count: rows.length }));
         return res.json(rows);
     });
 };
 const getAllContactRequests = (req, res) => {
-    db.all('SELECT * FROM contact_reqs', [], (err, rows) => {
+    log.info('getAllContactRequests called');
+    db.query('SELECT * FROM contact_reqs', [], (err, rows) => {
+        if (err) log.error('getAllContactRequests error: ' + JSON.stringify({ error: err }));
         if (err) {
             return res.status(500).json({ error: err.message });
         }
+        log.info('getAllContactRequests success: ' + JSON.stringify({ count: rows.length }));
         return res.json(rows);
     });
 };

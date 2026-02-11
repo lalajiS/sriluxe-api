@@ -1,16 +1,16 @@
 var express = require('express');
 var cors = require('cors');
 var https = require('http');
+require('dotenv').config();
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-const sqlite3 = require('sqlite3').verbose();
 const logger = require('./utils/logger');
 
 const { log } = require('./utils/logger');
 const db = require('./utils/db');
 
-require("dotenv").config();
 
+console.log(process.env.ENV);
 // Set the CORS Configurations
 var app = express();
 app.use(cors());
