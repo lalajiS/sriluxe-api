@@ -125,6 +125,7 @@ app.get(['/tour-details/:id',
          '/popular-destinations/:id',
          '/tour-packages/:id',
          '/trending-tours/:id'],
+         getAllPredefinedTours,
          async (req, res) => {
  
              let response_body = req.predefined_tours.find(tour => tour.id === req.params.id);
