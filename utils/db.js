@@ -1,4 +1,6 @@
 const { log } = require('./logger');
+const cacheManager = require('cache-manager');
+const toursCache = cacheManager.caching({ store: 'memory', max: 100, ttl: 600 });
 
 const mysql = require('mysql2');
 const db = mysql.createPool({
@@ -203,6 +205,102 @@ const getAllContactRequests = (req, res) => {
 
 
 
+// Middleware to get all predefined tours in the original JSON structure
+const getAllPredefinedTours = async (req, res, next) => {
+    log.info('getAllPredefinedTours called (optimized, cache)');
+    const startTime = Date.now();
+    
+    try {
+        // 1. Try cache first
+        const cached = await toursCache.get('all_predefined_tours');
+        if (cached) {
+            log.info(`getAllPredefinedTours cache hit, passing data to next(). Time: ${Date.now() - startTime}ms`);
+            req.predefined_tours = cached;
+            return next();
+        }
+        log.info('getAllPredefinedTours cache miss, querying DB');
+        
+        // 1. Fetch all tours 
+        const [tours] = await db.promise().query('SELECT * FROM tours');
+        log.info(`[Tours] Count: ${tours.length}`);
+        if (!tours.length) {
+            req.predefined_tours = [];
+            return next();
+        }
+        
+        const tourIds = tours.map(t => t.id);
+        const [itineraries] = await db.promise().query(
+            'SELECT * FROM itinerary WHERE tour_id IN (?)', [tourIds]
+        );
+        log.info(`[Itineraries] Count: ${itineraries.length}`);
+        
+        const itineraryIds = itineraries.map(i => i.id);
+        let activities = [], images = [];
+        if (itineraryIds.length) {
+            [activities] = await db.promise().query(
+                'SELECT itinerary_id, activity FROM itinerary_activities WHERE itinerary_id IN (?)', [itineraryIds]
+            );
+            [images] = await db.promise().query(
+                'SELECT itinerary_id, image FROM itinerary_images WHERE itinerary_id IN (?)', [itineraryIds]
+            );
+        }
+        log.info(`[Activities] Count: ${activities.length}`);
+        log.info(`[Images] Count: ${images.length}`);
+        
+        const activitiesByItinerary = {};
+        activities.forEach(a => {
+            if (!activitiesByItinerary[a.itinerary_id]) activitiesByItinerary[a.itinerary_id] = [];
+            activitiesByItinerary[a.itinerary_id].push(a.activity);
+        });
+        
+        const imagesByItinerary = {};
+        images.forEach(i => {
+            if (!imagesByItinerary[i.itinerary_id]) imagesByItinerary[i.itinerary_id] = [];
+            imagesByItinerary[i.itinerary_id].push(i.image);
+        });
+        
+        const itinerariesByTour = {};
+        itineraries.forEach(day => {
+            day.activities = activitiesByItinerary[day.id] || [];
+            day.images = imagesByItinerary[day.id] || [];
+            const { id, tour_id, ...rest } = day;
+            if (!itinerariesByTour[tour_id]) itinerariesByTour[tour_id] = [];
+            itinerariesByTour[tour_id].push(rest);
+        });
+        
+        const result = tours.map(tour => ({
+            id: tour.id,
+            title: tour.title,
+            sub_title: tour.sub_title,
+            image: tour.image,
+            location: tour.location,
+            description: tour.description,
+            num_of_days: tour.num_of_days,
+            price: {
+                b2c: tour.price_b2c,
+                currency: tour.price_currency
+            },
+            itenerary: itinerariesByTour[tour.id] || [],
+            popular_destinations: tour.popular_destinations ? "TRUE" : "FALSE",
+            tour_packages: tour.tour_packages ? "TRUE" : "FALSE",
+            trending_tour: tour.trending_tour ? "TRUE" : "FALSE"
+        }));
+        log.info(`getAllPredefinedTours (optimized, cache) assembled all data, caching and passing to next(). Count: ${result.length}`);
+        
+        await toursCache.set('all_predefined_tours', result);
+        log.info(`getAllPredefinedTours (optimized, cache) total time: ${Date.now() - startTime}ms`);
+        
+        req.predefined_tours = result;
+        return next();
+    } 
+    catch (err) {
+        log.error('getAllPredefinedTours (optimized, cache) error: ' + JSON.stringify({ error: err }));
+        return res.status(500).json({ error: err.message });
+    }
+};
+
+
+
 module.exports = { 
     db, 
     saveContactRequest,
@@ -214,5 +312,6 @@ module.exports = {
     saveGeneratedCustomTour,
     getAllGeneratedCustomTours,
     getGeneratedCustomTourByReqId,
-    getFullCustomTourData
+    getFullCustomTourData,
+    getAllPredefinedTours
 };

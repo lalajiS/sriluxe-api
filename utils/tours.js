@@ -1,5 +1,4 @@
 const hotels_data = require("../data/hotels.json");
-const predefined_tours = require("../data/predefined_tours.json");
 const { 
     get_images_by_location } = require('../utils/images');
 const custom_tour_responsebody = require("../data/custom_tour_responsebody.json");
@@ -91,7 +90,7 @@ const generateItinerary = async (starting_date, ending_date, season, luxuryLevel
 
 // Filter related tours based on the number of days
 // filters the tours closest to number of days we input
-async function getRelatedToursByDays(num_of_days) {
+async function getRelatedToursByDays(predefined_tours,num_of_days) {
   
     // Sort the array based on the absolute difference from the num_of_days
     const sorted = [...predefined_tours].sort((a, b) => {
@@ -145,7 +144,7 @@ const generateCustomTour = async (req, res, next) => {
     
     log.info(`Custom Tour : ${req.savedRequestId} : ${JSON.stringify(custom_tour)}`);
     
-    let related_tours = await getRelatedToursByDays(tour_days);
+    let related_tours = await getRelatedToursByDays(req.predefined_tours,tour_days);
     req.body.custom_tour = custom_tour;
     req.body.related_tours = related_tours;
 

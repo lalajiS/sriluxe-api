@@ -7,6 +7,7 @@ const {
     getAllTourEnquiryRequests,
     getAllGeneratedCustomTours,
     saveGeneratedCustomTour,
+    getAllPredefinedTours,
     getFullCustomTourData
 } = require('../utils/db'); 
 const {
@@ -18,7 +19,6 @@ const { sendEmail,
         renderCustomTourHtml,
         deepJsonToHtmlTable } = require('../utils/email');
 
-const predefined_tours = require("../data/predefined_tours.json");
 
 
 
@@ -27,6 +27,7 @@ const predefined_tours = require("../data/predefined_tours.json");
  */
 app.post('/custom-tour',
     saveCustomTourRequest,
+    getAllPredefinedTours,
     generateCustomTour,
     saveGeneratedCustomTour,
     async (req, res) => {
@@ -76,10 +77,11 @@ app.post('/custom-tour-enquiry',
  */
 app.post('/tour-enquiry',
     saveTourEnquiryRequest,
+    getAllPredefinedTours,
     async (req, res) => {
 
         let user_details = req.body;
-        let tour_details = predefined_tours.find(tour => tour.id === req.body.tour_id);
+        let tour_details = req.predefined_tours.find(tour => tour.id === req.body.tour_id);
 
         let plot_data = {
             name: user_details.name,
@@ -125,9 +127,9 @@ app.get(['/tour-details/:id',
          '/trending-tours/:id'],
          async (req, res) => {
  
-             let response_body = predefined_tours.find(tour => tour.id === req.params.id);
+             let response_body = req.predefined_tours.find(tour => tour.id === req.params.id);
              response_body.itenerary = await add_destination_img_to_itinerary(response_body.itenerary)
-             let related_tours = await getRelatedToursByDays(response_body.num_of_days);
+             let related_tours = await getRelatedToursByDays(req.predefined_tours, response_body.num_of_days);
  
              log.info(`Tour details: ${req.path} / ${req.params.id} : ${JSON.stringify(response_body)}`);
  
@@ -141,6 +143,15 @@ app.get(['/tour-details/:id',
     });
 
 
+app.get('/get-all-predefined-tours', 
+    getAllPredefinedTours,
+     async (req, res) => {
+        return res.send({
+            status: true,
+            statusText: 'Successful',
+            data: req.predefined_tours
+        })
+     })
 
 
 
